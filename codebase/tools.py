@@ -106,8 +106,8 @@ def get_thread(announcement_id: str) -> dict:
 def escalate(question: str, reason: str) -> dict:
     """escalate — soạn tin nhắn tag TA khi trợ lý không đủ căn cứ để trả lời.
     Input: câu hỏi gốc (str), lý do chuyển (str, vd "không có thông báo", "hai thông báo mâu thuẫn").
-    Output: {"status": "draft_pending_review", "to": "@TA", "message": str} — CHỈ LÀ BẢN NHÁP.
+    Output: {"status": "draft", "to": "@TA", "message": str} — CHỈ LÀ BẢN NHÁP.
     Tác động ra ngoài: CÓ nếu gửi → công cụ này KHÔNG gửi; TA / người duyệt bấm gửi."""
     message = ("@TA nhờ xác nhận giúp câu hỏi của học viên: \"%s\"\n"
                "Lý do trợ lý chuyển: %s." % (question.strip(), reason))
-    return {"status": "draft_pending_review", "to": "@TA", "message": message}
+    return {"status": "draft", "to": "@TA", "message": message}
