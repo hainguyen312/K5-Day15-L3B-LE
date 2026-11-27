@@ -11,10 +11,10 @@
 
 | STT | Họ và tên        | Mã học viên | Vai trò    | Phần việc chính |
 | --- | ---------------- | ----------- | ---------- | --------------- |
-| 1   | Nguyễn Đức Hải   | 2A202603899 | Đội trưởng | Canvas, spec §0–§2 và §4, điều phối, nộp checkpoint |
-| 2   | Lê Bá Nguyên     | 2A202604100 | Thành viên | Bằng chứng pain: giả thuyết, phỏng vấn, khảo sát (evidence/) |
-| 3   | Nguyễn Minh Quân | 2A202603747 | Thành viên | Bản chạy thử: agent, công cụ, nối model (codebase/) |
-| 4   | Vũ Đình Huy | 2A202603985 | Thành viên | Bộ câu thử, metric, data card (eval/, data/) |
+| 1   | Nguyễn Đức Hải   | 2A202603899 | Đội trưởng | Canvas, spec §0–§2 và §4 (thiết kế trợ lý Discord A2), điều phối, nộp checkpoint |
+| 2   | Lê Bá Nguyên     | 2A202604100 | Thành viên | Bằng chứng pain (evidence/): phỏng vấn học viên, TA; đếm câu hỏi hạn nộp trên Discord |
+| 3   | Nguyễn Minh Quân | 2A202603747 | Thành viên | Bản chạy thử (codebase/): search_announcements, get_thread, escalate (nháp), nối model |
+| 4   | Vũ Đình Huy | 2A202603985 | Thành viên | Bộ câu thử, metric, data card (eval/, data/): thông báo mẫu, câu thử hạn mâu thuẫn, tấn công |
 
 **Quy tắc điền**
 
