@@ -1,0 +1,161 @@
+{
+  "_note": "Thông báo mẫu cho công cụ search_announcements. TB* = viết lại từ tài liệu khoá có trong repo (README.md, canvas.md, spec.md, eval/metric_spec.yaml, TEAMS.md) — không phải nguyên văn Discord. TS* = synthetic, nhóm tự dựng để thử chỗ khó (thông báo bị thay, mâu thuẫn, theo lớp); 'Lab mẫu M1–M4' KHÔNG phải bài lab thật. Xem data/DATA_CARD.md.",
+  "announcements": [
+    {
+      "id": "TB01",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Checkpoint 1 (CP1)",
+      "text": "Hạn CP1: 17:00 Thứ Sáu 27/11. Nộp link repo nhóm (Public, mở bằng cửa sổ ẩn danh thấy được file). Repo phải có TEAMS.md đúng format và canvas.md bản đầu đủ 7 dòng (dòng 4 ghi giả thuyết + nguồn sẽ kiểm). Đội trưởng nộp bằng mã học viên ở dòng 1 TEAMS.md.",
+      "supersedes": null,
+      "source_ref": "README.md mục 0, canvas.md, TEAMS.md"
+    },
+    {
+      "id": "TB02",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Checkpoint 2 (CP2)",
+      "text": "Hạn CP2: 19:30 Thứ Sáu 27/11. Cập nhật canvas.md (số bằng chứng đầu + 1 trích dẫn, lát cắt đã chốt, dòng 'Đã đổi gì so với CP1'). Chốt chuẩn 'đạt' ở spec.md §7. eval/benchmark.csv ≥10 câu. eval/metric_spec.yaml ≥3 metric, chốt và KHÔNG sửa sau CP2 (sửa sau → khối R4 0 điểm). data/DATA_CARD.md bản đầu. codebase/ chạy hết luồng ở chế độ giả.",
+      "supersedes": null,
+      "source_ref": "README.md bảng 'File mẫu', canvas.md, spec.md, eval/metric_spec.yaml"
+    },
+    {
+      "id": "TB03",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Checkpoint 3 (CP3)",
+      "text": "Hạn CP3: 10:00 Thứ Bảy 28/11. spec.md §0–§7. evidence/summary.md xong. eval/benchmark.csv 20–30 câu. Bản chạy thử gọi AI thật ở quyết định trung tâm. Thử mô phỏng chi phí 10 phiên (python run.py simulate --try).",
+      "supersedes": null,
+      "source_ref": "README.md bảng 'File mẫu', spec.md, evidence/summary.md"
+    },
+    {
+      "id": "TB04",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Checkpoint 4 (CP4)",
+      "text": "Hạn CP4: 14:30 Thứ Bảy 28/11. spec.md đủ §0–§10. eval/report.md và eval/README.md. cost/personas.yaml, cost/cost-estimate.md. Slide demo xuất thành demo-slides.pdf đặt ở thư mục gốc repo, kèm link video dự phòng trong README.md. validation/log.md là bonus.",
+      "supersedes": null,
+      "source_ref": "README.md bảng 'File mẫu' và 'Bảy hạng mục', spec.md"
+    },
+    {
+      "id": "TB05",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Reflection cá nhân và changelog",
+      "text": "Hạn reflection: 23:59 Thứ Bảy 28/11. Mỗi người chép reflection/TEMPLATE.md thành reflection/<ten>.md. Changelog ở spec.md §10 được ghi tiếp đến 23:59 Thứ Bảy 28/11.",
+      "supersedes": null,
+      "source_ref": "README.md bảng 'File mẫu', spec.md"
+    },
+    {
+      "id": "TB06",
+      "label": "viet_lai",
+      "channel": "thong-bao-chung",
+      "author_role": "BTC",
+      "posted_at": "2026-11-27T08:00",
+      "applies_to": "tat_ca",
+      "title": "Quy định repo nhóm",
+      "text": "Repo mới, Public, tên theo mẫu K5-Day15-<lớp>-<tên nhóm> (tên nhóm viết liền, không dấu), vd K5-Day15-L3A-StudyPulse. README.md và run.py nằm ngay trang đầu repo. Không commit .env, API key, dữ liệu cá nhân thật, nguyên file data BTC cấp.",
+      "supersedes": null,
+      "source_ref": "README.md mục 0, AGENTS.md"
+    },
+    {
+      "id": "TS01",
+      "label": "synthetic",
+      "channel": "thong-bao-lab",
+      "author_role": "TA",
+      "posted_at": "2026-11-23T09:00",
+      "applies_to": "tat_ca",
+      "title": "Lab mẫu M1",
+      "text": "Lab mẫu M1: hạn 23:59 Thứ Năm 03/12. Nộp link repo qua LMS.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS02",
+      "label": "synthetic",
+      "channel": "thong-bao-lab",
+      "author_role": "TA",
+      "posted_at": "2026-11-24T20:00",
+      "applies_to": "tat_ca",
+      "title": "[Đính chính] Lab mẫu M1 lùi hạn",
+      "text": "Đính chính Lab mẫu M1: lùi hạn sang 12:00 Thứ Sáu 04/12. Ngoài link repo, nộp thêm file report.md trong repo. Thông báo này thay cho thông báo ngày 23/11.",
+      "supersedes": "TS01",
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS03",
+      "label": "synthetic",
+      "channel": "lop-l3a",
+      "author_role": "TA",
+      "posted_at": "2026-11-25T10:00",
+      "applies_to": "L3A",
+      "title": "Lab mẫu M2 — lớp L3A",
+      "text": "Lớp L3A: Lab mẫu M2 hạn 23:59 Thứ Hai 07/12, nộp qua LMS.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS04",
+      "label": "synthetic",
+      "channel": "lop-l3b",
+      "author_role": "TA",
+      "posted_at": "2026-11-25T10:05",
+      "applies_to": "L3B",
+      "title": "Lab mẫu M2 — lớp L3B",
+      "text": "Lớp L3B: Lab mẫu M2 hạn 21:00 Thứ Hai 07/12, nộp qua LMS.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS05",
+      "label": "synthetic",
+      "channel": "thong-bao-lab",
+      "author_role": "TA",
+      "posted_at": "2026-11-26T09:00",
+      "applies_to": "tat_ca",
+      "title": "Lab mẫu M3",
+      "text": "Lab mẫu M3: hạn 23:59 Thứ Tư 09/12, nộp link repo qua LMS.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS06",
+      "label": "synthetic",
+      "channel": "thong-bao-chung",
+      "author_role": "TA",
+      "posted_at": "2026-11-26T09:30",
+      "applies_to": "tat_ca",
+      "title": "Nhắc lịch tuần",
+      "text": "Nhắc lịch tuần: Lab mẫu M3 hạn 17:00 Thứ Tư 09/12.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — cố ý mâu thuẫn với TS05, không thông báo nào thay thông báo nào"
+    },
+    {
+      "id": "TS07",
+      "label": "synthetic",
+      "channel": "thong-bao-lab",
+      "author_role": "TA",
+      "posted_at": "2026-11-26T15:00",
+      "applies_to": "tat_ca",
+      "title": "Lab mẫu M4",
+      "text": "Lab mẫu M4: nộp file notebook .ipynb và ảnh chụp kết quả chạy, qua Google Form của lớp. Hạn 23:59 Chủ Nhật 13/12.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    }
+  ]
+}
