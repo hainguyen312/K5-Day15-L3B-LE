@@ -1,4 +1,4 @@
-# LE — Trợ lý Discord trả lời hạn nộp, yêu cầu nộp từ thông báo chính thức (Track A · A2)
+# LE — Trợ lý Discord trả lời hạn nộp, phòng / lịch học từ thông báo chính thức (Track A · A2)
 
 **Thành viên, lớp, track:** xem [TEAMS.md](TEAMS.md). **Điền TEAMS.md đúng format**: khi chấm và đánh giá, BTC quét file này để ghép điểm cho từng người.
 
