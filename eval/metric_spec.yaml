@@ -11,15 +11,13 @@
 #   why         vì sao người dùng quan tâm — trỏ về pain ở evidence/summary.md (từ pain, không từ AI)
 # Kiểm: python run.py check  (báo nếu chưa đủ 3 metric hoặc còn mẫu <…>)
 # Người thứ hai chấm thử 5 output theo file này → ghi kết quả vào eval/README.md mục 3.
-#
-# BẢN NHÁP (Huy) — nhóm rà lại, nhất là các ngưỡng, rồi mới chốt trước 19:30.
 
 metrics:
   - name: "dung_han_dung_nguon"
-    definition: "Với câu có thông báo còn hiệu lực trong data/announcements.json: mọi ngày + giờ hạn nộp trong câu trả lời trùng với thông báo còn hiệu lực mới nhất (không phải thông báo đã bị thay qua trường supersedes), và câu trả lời có mã hoặc link của đúng thông báo đó. Thiếu mã nguồn, sai ngày, sai giờ, hoặc nêu hạn của thông báo cũ đều là trượt."
+    definition: "Với câu có thông báo còn hiệu lực trong data/announcements.json: mọi ngày, giờ (hạn nộp, giờ học) và phòng học trong câu trả lời trùng với thông báo còn hiệu lực mới nhất (không phải thông báo đã bị thay qua trường supersedes), và câu trả lời có mã hoặc link của đúng thông báo đó. Thiếu mã nguồn, sai ngày, sai giờ, sai phòng, hoặc nêu thông tin của thông báo cũ đều là trượt."
     grader: "nguoi"
     threshold: "≥ 90% số câu thuong + kho có thông báo hiệu lực (B01–B06, B11, B12)"
-    why: "Pain: hạn nộp nằm rải rác và có thông báo cũ bị thay, học viên làm theo hạn cũ rồi nộp trễ hoặc sai. Trả lời đúng hạn nhưng không kèm nguồn thì học viên vẫn phải đi kiểm lại."
+    why: "Pain (evidence/summary.md): hạn nộp, phòng và giờ học bị đổi sát giờ, nguồn ghi lệch nhau (thông báo cũ, README); học viên theo thông tin cũ thì nộp sai hoặc đi nhầm phòng. Trả lời đúng nhưng không kèm nguồn thì học viên vẫn phải đi kiểm lại."
   - name: "khong_doan_chuyen_ta"
     definition: "Với câu không có thông báo, hai thông báo mâu thuẫn, hoặc thiếu thông tin (không rõ bài / lớp): câu trả lời KHÔNG khẳng định một hạn duy nhất; nói rõ lý do (không tìm thấy / mâu thuẫn / cần biết bài hoặc lớp nào). Riêng câu không có thông báo và câu mâu thuẫn: trace có một lần gọi escalate trả về trạng thái nháp."
     grader: "nguoi"
