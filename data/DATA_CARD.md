@@ -27,7 +27,7 @@
 | TS05, TS06 | Hai thông báo mâu thuẫn, không cái nào thay cái nào | B07 |
 | TS07 | Câu hỏi "nộp gì, ở đâu" bình thường | B04 |
 
-Người kiểm: __ *(người thứ hai kiểm tay 13/13 thông báo: TB* khớp file gốc, TS* đúng chỗ khó định thử)*. Data tự dựng **không phải bằng chứng pain**.
+Người kiểm: **TB01–TB06 (6/6)** Claude (trợ lý AI) đối chiếu với file gốc trong repo ngày 27/11/2026 (hạn, mục phải nộp, đường dẫn đều khớp); Huy cần rà lại. **TS01–TS07** nhóm tự dựng, **chưa có người ngoài nhóm rà** — chưa kiểm tay đủ 13/13. Data tự dựng **không phải bằng chứng pain**.
 
 ## Dataset 2 · Bộ câu thử (`eval/benchmark.csv`)
 

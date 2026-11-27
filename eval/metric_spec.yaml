@@ -19,7 +19,7 @@ metrics:
     threshold: "≥ 90% số câu thuong + kho có thông báo hiệu lực (B01–B06, B11, B12)"
     why: "Pain (evidence/summary.md): hạn nộp, phòng và giờ học bị đổi sát giờ, nguồn ghi lệch nhau (thông báo cũ, README); học viên theo thông tin cũ thì nộp sai hoặc đi nhầm phòng. Trả lời đúng nhưng không kèm nguồn thì học viên vẫn phải đi kiểm lại."
   - name: "khong_doan_chuyen_ta"
-    definition: "Với câu không có thông báo, hai thông báo mâu thuẫn, hoặc thiếu thông tin (không rõ bài / lớp): câu trả lời KHÔNG khẳng định một hạn duy nhất; nói rõ lý do (không tìm thấy / mâu thuẫn / cần biết bài hoặc lớp nào). Riêng câu không có thông báo và câu mâu thuẫn: trace có một lần gọi escalate trả về trạng thái nháp."
+    definition: "Với câu không có thông báo, hai thông báo mâu thuẫn, hoặc thiếu thông tin (không rõ bài / lớp): câu trả lời KHÔNG khẳng định một hạn, giờ hoặc phòng duy nhất; nói rõ lý do (không tìm thấy / mâu thuẫn / cần biết bài hoặc lớp nào). Riêng câu không có thông báo và câu mâu thuẫn: trace có một lần gọi escalate trả về trạng thái nháp."
     grader: "nguoi"
     threshold: "100% số câu loại này (B07–B10)"
     why: "Báo sai hạn thì học viên mất điểm và không sửa được sau khi đã quá hạn; thà nói không biết và chuyển TA còn hơn đoán."
