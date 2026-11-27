@@ -6,15 +6,15 @@
 
 - Tên nhóm: LE
 - Lớp: L3B
-- Track: ____
+- Track: A
 - Link repo: https://github.com/hainguyen312/K5-Day15-L3B-LE
 
 | STT | Họ và tên        | Mã học viên | Vai trò    | Phần việc chính |
 | --- | ---------------- | ----------- | ---------- | --------------- |
-| 1   | Nguyễn Đức Hải   | 2A202603899 | Đội trưởng | ____            |
-| 2   | Lê Bá Nguyên     | 2A202604100 | Thành viên | ____            |
-| 3   | Nguyễn Minh Quân | 2A202603747 | Thành viên | ____            |
-| 4   | Vũ Đình Huy | 2A202603985 | Thành viên | ____            |
+| 1   | Nguyễn Đức Hải   | 2A202603899 | Đội trưởng | Canvas, spec §0–§2 và §4, điều phối, nộp checkpoint |
+| 2   | Lê Bá Nguyên     | 2A202604100 | Thành viên | Bằng chứng pain: giả thuyết, phỏng vấn, khảo sát (evidence/) |
+| 3   | Nguyễn Minh Quân | 2A202603747 | Thành viên | Bản chạy thử: agent, công cụ, nối model (codebase/) |
+| 4   | Vũ Đình Huy | 2A202603985 | Thành viên | Bộ câu thử, metric, data card (eval/, data/) |
 
 **Quy tắc điền**
 
