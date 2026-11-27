@@ -58,6 +58,20 @@ def _context(items: list) -> str:
     return "\n\n".join(lines)
 
 
+_TIME = re.compile(r"\b([01]?\d|2[0-3])(?::([0-5]\d)|h([0-5]\d)?)(?!\w)")  # 19:30 · 10h · 19h30
+_DATE = re.compile(r"\b([0-3]?\d)\s*/\s*([01]?\d)(?:\s*/\s*\d{2,4})?\b")
+
+
+def _datetimes(text: str) -> set:
+    """Lấy mọi giờ (HH:MM) và ngày (DD/MM) trong đoạn chữ, chuẩn hoá: "9h" → "09:00", "4/12/2026" → "04/12"."""
+    out = set()
+    for d, m in _DATE.findall(text):
+        out.add("%02d/%02d" % (int(d), int(m)))
+    for h, m1, m2 in _TIME.findall(_DATE.sub(" ", text)):
+        out.add("%02d:%s" % (int(h), m1 or m2 or "00"))
+    return out
+
+
 def _where(a: dict) -> str:
     """Chưa có link thật thì chỉ kênh + giờ đăng để học viên tự mở."""
     return a.get("link") or "#%s · %s" % (a.get("channel", ""), a.get("posted_at", ""))
@@ -87,7 +101,7 @@ def answer(text: str) -> dict:
                       "Mình không tìm thấy thông báo chính thức nào nói về việc này, nên không đoán.")
 
     # (3) Bỏ bản đã bị đính chính, chỉ giữ bản mới nhất của mỗi chuỗi
-    current, seen = [], set()
+    current, seen, older = [], set(), {}  # older: mã bản mới nhất → các bản cũ nó thay
     for a in hits:
         latest = get_thread(a["id"])
         chain = {x["id"]: x for x in latest["chain"]}
@@ -95,6 +109,7 @@ def answer(text: str) -> dict:
         if lid not in seen:
             seen.add(lid)
             current.append(chain.get(lid, a))
+            older[lid] = [x for x in latest["chain"] if x["id"] != lid]
         if lid != a["id"]:
             note("%s đã bị thay bởi %s" % (a["id"], lid))
 
@@ -121,6 +136,18 @@ def answer(text: str) -> dict:
             note("chặn: trích dẫn thiếu hoặc không có trong căn cứ: %s" % cited)
             return _to_ta(text, "câu trả lời không có căn cứ hợp lệ",
                           "Mình không tìm được thông báo làm căn cứ chắc chắn, nên không đoán.")
+        # Chặn rủi ro (spec.md §4): mọi ngày / giờ trong câu trả lời phải có trong thông báo được trích
+        # (hoặc bản cũ mà nó thay — để trợ lý được nói "hạn cũ 23:59 đã bị thay").
+        by_id = {a["id"]: a for a in current}
+        allowed = set()
+        for c in cited:
+            for a in [by_id[c]] + older.get(c, []):
+                allowed |= _datetimes(a["title"] + " " + a["text"])
+        bad = sorted(_datetimes(body) - allowed)
+        if bad:
+            note("chặn: ngày giờ không có trong thông báo được trích: %s" % bad)
+            return _to_ta(text, "ngày giờ trong câu trả lời không khớp thông báo (%s)" % ", ".join(bad),
+                          "Mình chưa chắc chắn về ngày giờ, nên không đoán. Đã nhờ TA xác nhận.")
         return {"output": body + "\n" + _sources(cited, current)}
     if label == "KHONG_CO":
         return _to_ta(text, "thông báo hiện có không nói về điều được hỏi", body)
