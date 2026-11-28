@@ -5,16 +5,16 @@
 
 ## 1. Dataset → xử lý
 
-- **Thông báo mẫu** (`data/announcements.json`, 13 thông báo): TB01–TB06 viết lại từ tài liệu khoá có trong repo (mỗi dòng có `source_ref`); TS01–TS07 nhóm tự dựng, nhãn `synthetic` (thông báo bị thay, hạn khác theo lớp, hai thông báo mâu thuẫn). Viết tay, không có tên người hay mã học viên. Chưa có thông báo phòng / lịch: bổ sung trước CP3.
-- **Bộ câu thử** (`eval/benchmark.csv`): nhóm tự viết, mỗi câu gắn với một thông báo hoặc cố ý không có thông báo nào.
+- **Thông báo mẫu** (`data/announcements.json`, 23 thông báo): TB01–TB06 viết lại từ tài liệu khoá có trong repo (mỗi dòng có `source_ref`); TS01–TS17 nhóm tự dựng, nhãn `synthetic` (thông báo bị thay, hạn / phòng khác theo lớp, hai thông báo mâu thuẫn, đổi phòng sát giờ, câu trả lời ở thread khác, lịch Gate bị dời). Viết tay, không có tên người hay mã học viên.
+- **Bộ câu thử** (`eval/benchmark.csv`): 17 câu nhóm tự viết (B01–B15, B22, B23) + 11 câu lấy nguyên văn từ tin hỏi trên Discord `#chung` đã bỏ tên (B16–B21, B24–B28, mã D002–D031). Mỗi câu gắn với một thông báo hoặc cố ý không có thông báo nào. `expected` của câu Discord do nhóm viết dựa trên thông báo `synthetic`, không phải câu trả lời thật của TA; B20 là tình huống dựng lại (trên Discord thật, học viên chỉ xem nhầm ngày).
 - Chi tiết, giới hạn: `data/DATA_CARD.md`. Data tự dựng **không phải bằng chứng pain**.
 
 ## 2. Bộ câu thử dựng ra sao
 
-- `eval/benchmark.csv`: 15 câu (thuong 5 · kho 7 · tu_choi 3, trong đó 2 câu tấn công: B14, B15)
-- Nguồn (`python run.py check` in sẵn): nguoi_dung 0 · data_that 0 · tu_viet 15 · sinh_seed 0 → từ người dùng / data thật 0/15 (cần ≥1/3: **chưa đạt**, bổ sung từ `evidence/` trước CP3, lên 20–30 câu)
-- Độ phủ — lưới input 3–5 chiều (guide 2.4 bước 5): (a) loại thông tin hỏi: hạn nộp / nộp gì ở đâu / cách đặt tên repo (phòng, lịch học: thêm trước CP3) · (b) tình trạng nguồn: có thông báo rõ / thông báo bị thay / hai thông báo mâu thuẫn / không có thông báo · (c) đủ thông tin hay mơ hồ: nói rõ bài, hoặc không nói bài / lớp, hoặc viết tắt không dấu · (d) lớp: tất cả / L3A / L3B · (e) loại yêu cầu: hỏi bình thường / ngoài thẩm quyền (điểm, điểm danh) / tấn công
-- Câu `kho` trỏ về 4 lớp chỗ khó (`spec.md` §5): lớp 1 (nguồn sự thật): B06, B07, B09 · lớp 2 (mơ hồ / thiếu thông tin): B08, B10, B11 · lớp 3 (ngoài phạm vi / thẩm quyền): B13, B14, B15 *(tu_choi)* · lớp 4 (đặc thù: sai thì nộp sai, mất điểm): B12
+- `eval/benchmark.csv`: 28 câu (thuong 7 · kho 17 · tu_choi 4, trong đó 2 câu tấn công: B14, B15)
+- Nguồn (`python run.py check` in sẵn): nguoi_dung 0 · data_that 11 · tu_viet 17 · sinh_seed 0 → từ người dùng / data thật 11/28 = 39% (cần ≥1/3: **đạt**)
+- Độ phủ — lưới input 3–5 chiều (guide 2.4 bước 5): (a) loại thông tin hỏi: hạn nộp / nộp gì ở đâu / cách đặt tên repo / phòng / giờ / lịch học / link học online · (b) tình trạng nguồn: có thông báo rõ / thông báo bị thay / hai thông báo mâu thuẫn / không có thông báo · (c) đủ thông tin hay mơ hồ: nói rõ bài, hoặc không nói bài / lớp, hoặc viết tắt không dấu · (d) lớp: tất cả / L3A / L3B · (e) loại yêu cầu: hỏi bình thường / ngoài thẩm quyền (điểm, điểm danh) / tấn công
+- Câu `kho` trỏ về 4 lớp chỗ khó (`spec.md` §5): lớp 1 (nguồn sự thật): B06, B07, B09, B17, B18, B21, B25, B26, B27 · lớp 2 (mơ hồ / thiếu thông tin): B08, B10, B11, B23 · lớp 3 (ngoài phạm vi / thẩm quyền): B13, B14, B15, B28 *(tu_choi)* · lớp 4 (đặc thù: thông báo bị thay, sai thì nộp sai / đi nhầm phòng): B12, B16, B20, B24
 
 ## 3. Metric và cách chấm
 
@@ -48,4 +48,6 @@ Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, k
 
 ## 6. Lỗi chính
 
-Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+- **Lỗi lớn nhất (lượt 1, 18/28 = 64%):** câu không có thông báo bị trợ lý gắn "ngoài phạm vi" nên không có nháp tag TA (B21, B25, B26, B27), và câu từ chối thiếu chỉ đường hỏi TA / hạn chính thức (B14, B15) — trượt điều kiện cứng 1 và 2 của §7.
+- **Đã sửa:** chỉ prompt SYSTEM trong `codebase/agent.py` (câu không có căn cứ → `KHONG_CO` + nháp TA; `TU_CHOI` phải chỉ hỏi TA và nêu hạn chính thức) → lượt 2 24/28 = 86%, đạt chuẩn §7 (`run-2@20261128-100129`).
+- **Còn lại (4 câu trượt lượt 2):** B06 thiếu `report.md`, B11 hỏi lại lớp thừa, B16 không nói phòng đã đổi, B24 không nêu C204 / không hỏi lại lớp. Lượt 2 sửa trên chính bộ này nên không phải số độc lập; chấm của Huy, người thứ hai chưa xong (mục 3).

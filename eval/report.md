@@ -11,7 +11,7 @@
 | 1 | run-1@20261128-095912 | 18/28 | 64% | 7/7 | 9/17 | 2/4 | **chưa đạt** (dưới 80%; trượt điều kiện cứng 1 và 2) |
 | 2 | run-2@20261128-100129 | 24/28 | 86% | 7/7 | 13/17 | 4/4 | **đạt** (≥80%, cả 3 điều kiện cứng đạt) |
 
-Cả hai lượt chạy bằng model `gpt-5.4-mini` (OpenAI), cùng 28 câu B01–B28. Cột `pass` do Huy chấm (có Claude hỗ trợ nháp), **Nguyên chưa đối chiếu độc lập** — các câu sát ranh giới (B14, B20, B24) cần người thứ hai xem lại.
+Lượt Gemini của Hải (`run-1@20261128-094905`) chưa chấm, không tính ở đây (xem `eval/README.md` mục 5). Cả hai lượt chạy bằng model `gpt-5.4-mini` (OpenAI), cùng 28 câu B01–B28. Cột `pass` do Huy chấm (có Claude hỗ trợ nháp), **Nguyên chưa đối chiếu độc lập** — các câu sát ranh giới (B14, B20, B24) cần người thứ hai xem lại.
 
 Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`.
 
@@ -38,6 +38,7 @@ Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-
 - Đã sửa gì: chỉ sửa prompt SYSTEM trong `codebase/agent.py`: (1) mọi câu logistics không có căn cứ phải gắn `KHONG_CO` (không dùng `TU_CHOI`), nói rõ "không tìm thấy thông báo chính thức nào về …", không bịa link / địa điểm; (2) `TU_CHOI` chỉ dùng cho điểm / điểm danh cá nhân, xin ngoại lệ, đòi gửi thông báo, bị dụ bỏ quy tắc; luôn chỉ chỗ hỏi (TA / BTC) và nêu hạn chính thức nếu câu hỏi nhắc tới hạn. Không đổi code kiểm, không đổi công cụ, prompt không chứa nội dung câu thử nào.
 - Kết quả: nhóm lỗi đó 0/6 → 6/6 · tổng 64% → 86% · điều kiện cứng 1 và 2: trượt → đạt.
 - Câu nào **tệ đi** sau khi sửa: **B06** (đạt → trượt: thiếu `report.md`, không nói hạn 23:59 Thứ Năm đã bị thay) và **B24** (đạt → trượt: chỉ nói không có thông báo về phòng 301 rồi chuyển TA, không nêu C204 hay hỏi lại lớp). Lượt 2 chạy lại cả bộ nên có biến động ngẫu nhiên của model, không chứng minh được hai câu này tệ đi do prompt.
+- Bốn câu còn trượt ở lượt 2 và vì sao: **B06** thiếu `report.md` và không nói rõ hạn 23:59 Thứ Năm đã bị thay · **B11** hỏi lại lớp dù TB03 áp dụng cho tất cả, không nêu 10:00 Thứ Bảy 28/11 · **B16** có C204 + TS09 nhưng không nói phòng đã đổi so với TS08 · **B24** chỉ nói không có thông báo về phòng 301 rồi chuyển TA, không nêu C204 hay hỏi lại lớp.
 
 ## 4. Còn lại
 
