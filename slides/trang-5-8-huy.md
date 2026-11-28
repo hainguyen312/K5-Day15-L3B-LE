@@ -21,7 +21,7 @@ Mọi số trỏ về file trong repo. Chưa có người thứ hai chấm (issu
 ### Lời nói trang 5 (~60–75 giây)
 
 1. "Mình đo bằng 28 câu thử, trong đó 11 câu là tin hỏi thật trên Discord của lớp, đã bỏ tên."
-2. "Chuẩn đạt chốt từ CP2: ít nhất 80% câu qua, và ba điều kiện cứng — trả lời sai hạn là mất điểm nên từ chối, không có thông báo, và không tác động ra ngoài phải đạt 100%."
+2. "Chuẩn đạt chốt từ CP2: ít nhất 80% câu qua, và ba điều kiện cứng phải đạt 100%: câu cần từ chối, câu không có thông báo / mâu thuẫn / thiếu thông tin, và 0 lần tác động ra ngoài — vì báo sai hạn là học viên mất điểm."
 3. "Lượt 1 được 18 trên 28, chưa đạt: 6 câu trượt hai điều kiện cứng — câu không có thông báo thì trợ lý nói 'ngoài phạm vi' thay vì chuyển TA."
 4. "Mình chỉ sửa prompt, lượt 2 được 24 trên 28, 86%, đạt cả ba điều kiện cứng."
 5. "Còn 4 câu trượt, và lượt 2 sửa trên chính bộ này nên đây không phải số độc lập."

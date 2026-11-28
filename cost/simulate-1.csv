@@ -1,0 +1,51 @@
+﻿run_id,session,persona,turns,inputs,model,model_calls,tool_calls,tokens_in,tokens_out,latency_s,error,tokens_by_model
+simulate-1@20261128-123900,S001,hoi_khi_thong_tin_doi,2,"CP2 hạn mấy giờ, nhóm phải nộp những gì? ‖ sáng nay em học lec ở phòng D301 thì là chỗ nào v ạ?",gpt-5.4-mini,2,9,2024,153,3.664,,"{""gpt-5.4-mini"": {""in"": 2024, ""out"": 153}}"
+simulate-1@20261128-123900,S002,chi_nghe_tren_lop,1,lab M2 hạn khi nào?,gpt-5.4-mini,1,3,902,22,0.835,,"{""gpt-5.4-mini"": {""in"": 902, ""out"": 22}}"
+simulate-1@20261128-123900,S003,chi_nghe_tren_lop,1,Lab M4 nộp file gì và nộp ở đâu?,gpt-5.4-mini,1,2,849,40,1.083,,"{""gpt-5.4-mini"": {""in"": 849, ""out"": 40}}"
+simulate-1@20261128-123900,S004,hoi_khi_thong_tin_doi,2,"em nộp cái daily standup mãi nó cứ báo lỗi tới giờ bị trễ deadline mất, thì em c ‖ Slide demo để ở đâu trong repo, CP4 hạn mấy giờ?",gpt-5.4-mini,2,8,2108,91,2.621,,"{""gpt-5.4-mini"": {""in"": 2108, ""out"": 91}}"
+simulate-1@20261128-123900,S005,chi_nghe_tren_lop,1,"reflection cá nhân nộp hạn khi nào, để file ở đâu?",gpt-5.4-mini,1,6,1288,51,0.891,,"{""gpt-5.4-mini"": {""in"": 1288, ""out"": 51}}"
+simulate-1@20261128-123900,S006,chi_nghe_tren_lop,1,Lab M3 hạn mấy giờ?,gpt-5.4-mini,1,4,885,50,0.921,,"{""gpt-5.4-mini"": {""in"": 885, ""out"": 50}}"
+simulate-1@20261128-123900,S007,chi_nghe_tren_lop,1,Sáng thứ Tư 02/12 lab học phòng nào vậy?,gpt-5.4-mini,1,6,1083,21,0.914,,"{""gpt-5.4-mini"": {""in"": 1083, ""out"": 21}}"
+simulate-1@20261128-123900,S008,chi_nghe_tren_lop,1,Lab M3 hạn mấy giờ?,gpt-5.4-mini,1,4,885,53,0.916,,"{""gpt-5.4-mini"": {""in"": 885, ""out"": 53}}"
+simulate-1@20261128-123900,S009,hoi_khi_thong_tin_doi,2,"sáng nay lấy link học onl ở đâu thế mng ‖ em nộp cái daily standup mãi nó cứ báo lỗi tới giờ bị trễ deadline mất, thì em c",gpt-5.4-mini,2,14,2299,49,2.152,,"{""gpt-5.4-mini"": {""in"": 2299, ""out"": 49}}"
+simulate-1@20261128-123900,S010,chi_nghe_tren_lop,1,co TKB cho tuan sau chua a?,gpt-5.4-mini,1,6,1224,21,0.87,,"{""gpt-5.4-mini"": {""in"": 1224, ""out"": 21}}"
+simulate-1@20261128-123900,S011,chi_nghe_tren_lop,1,"CP2 hạn mấy giờ, nhóm phải nộp những gì?",gpt-5.4-mini,1,2,937,157,1.226,,"{""gpt-5.4-mini"": {""in"": 937, ""out"": 157}}"
+simulate-1@20261128-123900,S012,hoi_khi_thong_tin_doi,2,Lab M1 hạn 23:59 thứ năm đúng không bạn? ‖ sáng nay lấy link học onl ở đâu thế mng,gpt-5.4-mini,2,10,1958,58,1.942,,"{""gpt-5.4-mini"": {""in"": 1958, ""out"": 58}}"
+simulate-1@20261128-123900,S013,chi_nghe_tren_lop,1,Lab M5 nộp gì vậy?,,0,2,0,0,0.001,,{}
+simulate-1@20261128-123900,S014,chi_nghe_tren_lop,1,"cp3 nop gi, may h",gpt-5.4-mini,1,2,876,13,0.681,,"{""gpt-5.4-mini"": {""in"": 876, ""out"": 13}}"
+simulate-1@20261128-123900,S015,chi_nghe_tren_lop,1,phòng C303 đang khám sức khỏe thì lab 3b sáng nay hc ở đâu ạ,gpt-5.4-mini,1,6,1088,33,1.071,,"{""gpt-5.4-mini"": {""in"": 1088, ""out"": 33}}"
+simulate-1@20261128-123900,S016,chi_nghe_tren_lop,1,Sau CP2 nhóm mình sửa lại metric_spec.yaml cho hợp hơn được không?,gpt-5.4-mini,1,2,938,45,1.11,,"{""gpt-5.4-mini"": {""in"": 938, ""out"": 45}}"
+simulate-1@20261128-123900,S017,hoi_khi_thong_tin_doi,2,"reflection cá nhân nộp hạn khi nào, để file ở đâu? ‖ sáng nay em học lec ở phòng D301 thì là chỗ nào v ạ?",gpt-5.4-mini,2,13,2375,78,1.939,,"{""gpt-5.4-mini"": {""in"": 2375, ""out"": 78}}"
+simulate-1@20261128-123900,S018,chi_nghe_tren_lop,1,Lab M4 nộp file gì và nộp ở đâu?,gpt-5.4-mini,1,2,849,41,0.833,,"{""gpt-5.4-mini"": {""in"": 849, ""out"": 41}}"
+simulate-1@20261128-123900,S019,hoi_don_khi_doi_phong,1,phòng C303 đang khám sức khỏe thì lab 3b sáng nay hc ở đâu ạ,gpt-5.4-mini,1,6,1088,31,0.794,,"{""gpt-5.4-mini"": {""in"": 1088, ""out"": 31}}"
+simulate-1@20261128-123900,S020,chi_nghe_tren_lop,1,hạn nộp là khi nào?,gpt-5.4-mini,1,6,1170,21,0.782,,"{""gpt-5.4-mini"": {""in"": 1170, ""out"": 21}}"
+simulate-1@20261128-123900,S021,hoi_khi_thong_tin_doi,2,Sáng thứ Tư 02/12 lab học phòng nào vậy? ‖ Sau CP2 nhóm mình sửa lại metric_spec.yaml cho hợp hơn được không?,gpt-5.4-mini,2,8,2021,59,1.844,,"{""gpt-5.4-mini"": {""in"": 2021, ""out"": 59}}"
+simulate-1@20261128-123900,S022,chi_nghe_tren_lop,1,sáng nay lấy link học onl ở đâu thế mng,gpt-5.4-mini,1,7,1081,25,0.848,,"{""gpt-5.4-mini"": {""in"": 1081, ""out"": 25}}"
+simulate-1@20261128-123900,S023,chi_nghe_tren_lop,1,"lịch học hôm nay của bọn em đến 20h, mà office hour diễn ra từ 19h - 21h30 thì c",gpt-5.4-mini,1,7,1231,36,0.999,,"{""gpt-5.4-mini"": {""in"": 1231, ""out"": 36}}"
+simulate-1@20261128-123900,S024,chi_nghe_tren_lop,1,hạn nộp là khi nào?,gpt-5.4-mini,1,6,1170,21,0.726,,"{""gpt-5.4-mini"": {""in"": 1170, ""out"": 21}}"
+simulate-1@20261128-123900,S025,hoi_don_khi_doi_phong,1,lab M2 hạn khi nào?,gpt-5.4-mini,1,3,902,21,0.861,,"{""gpt-5.4-mini"": {""in"": 902, ""out"": 21}}"
+simulate-1@20261128-123900,S026,hoi_khi_thong_tin_doi,2,phòng C303 đang khám sức khỏe thì lab 3b sáng nay hc ở đâu ạ ‖ Lab M5 nộp gì vậy?,gpt-5.4-mini,1,8,1088,22,0.83,,"{""gpt-5.4-mini"": {""in"": 1088, ""out"": 22}}"
+simulate-1@20261128-123900,S027,chi_nghe_tren_lop,1,Sau CP2 nhóm mình sửa lại metric_spec.yaml cho hợp hơn được không?,gpt-5.4-mini,1,2,938,52,0.915,,"{""gpt-5.4-mini"": {""in"": 938, ""out"": 52}}"
+simulate-1@20261128-123900,S028,chi_nghe_tren_lop,1,Sau CP2 nhóm mình sửa lại metric_spec.yaml cho hợp hơn được không?,gpt-5.4-mini,1,2,938,43,0.923,,"{""gpt-5.4-mini"": {""in"": 938, ""out"": 43}}"
+simulate-1@20261128-123900,S029,chi_nghe_tren_lop,1,Lab M5 nộp gì vậy?,,0,2,0,0,0.001,,{}
+simulate-1@20261128-123900,S030,hoi_khi_thong_tin_doi,2,"lịch học hôm nay của bọn em đến 20h, mà office hour diễn ra từ 19h - 21h30 thì c ‖ em 303 nãy tìm không thấy lớp e qua 301 được khong ạ",gpt-5.4-mini,2,14,2312,64,2.113,,"{""gpt-5.4-mini"": {""in"": 2312, ""out"": 64}}"
+simulate-1@20261128-123900,S031,chi_nghe_tren_lop,1,em 303 nãy tìm không thấy lớp e qua 301 được khong ạ,gpt-5.4-mini,1,7,1081,32,0.826,,"{""gpt-5.4-mini"": {""in"": 1081, ""out"": 32}}"
+simulate-1@20261128-123900,S032,chi_nghe_tren_lop,1,sáng nay em học lec ở phòng D301 thì là chỗ nào v ạ?,gpt-5.4-mini,1,7,1087,22,0.758,,"{""gpt-5.4-mini"": {""in"": 1087, ""out"": 22}}"
+simulate-1@20261128-123900,S033,chi_nghe_tren_lop,1,co TKB cho tuan sau chua a?,gpt-5.4-mini,1,6,1224,22,0.852,,"{""gpt-5.4-mini"": {""in"": 1224, ""out"": 22}}"
+simulate-1@20261128-123900,S034,chi_nghe_tren_lop,1,em 303 nãy tìm không thấy lớp e qua 301 được khong ạ,gpt-5.4-mini,1,7,1081,29,1.006,,"{""gpt-5.4-mini"": {""in"": 1081, ""out"": 29}}"
+simulate-1@20261128-123900,S035,hoi_khi_thong_tin_doi,2,"lab M2 hạn khi nào? ‖ lịch học hôm nay của bọn em đến 20h, mà office hour diễn ra từ 19h - 21h30 thì c",,2,9,0,0,0.047,T1 URLError: <urlopen error [Errno 11002] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S036,chi_nghe_tren_lop,1,"reflection cá nhân nộp hạn khi nào, để file ở đâu?",,1,6,0,0,0.021,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S037,chi_nghe_tren_lop,1,"reflection cá nhân nộp hạn khi nào, để file ở đâu?",,1,6,0,0,0.02,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S038,hoi_khi_thong_tin_doi,2,phòng C303 đang khám sức khỏe thì lab 3b sáng nay hc ở đâu ạ ‖ Lab M5 nộp gì vậy?,,1,8,0,0,0.022,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S039,chi_nghe_tren_lop,1,"Lab sáng Thứ Ba 01/12 lớp L3B học phòng nào, mấy giờ?",,1,6,0,0,0.019,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S040,hoi_khi_thong_tin_doi,2,"cp3 nop gi, may h ‖ Lab M3 hạn mấy giờ?",,2,5,0,0,0.042,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S041,hoi_khi_thong_tin_doi,2,phòng C303 đang khám sức khỏe thì lab 3b sáng nay hc ở đâu ạ ‖ em 303 nãy tìm không thấy lớp e qua 301 được khong ạ,,2,12,0,0,0.043,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S042,chi_nghe_tren_lop,1,Lab M5 nộp gì vậy?,,0,2,0,0,0.001,,{}
+simulate-1@20261128-123900,S043,chi_nghe_tren_lop,1,sáng nay em học lec ở phòng D301 thì là chỗ nào v ạ?,,1,6,0,0,0.021,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S044,chi_nghe_tren_lop,1,Lab M5 nộp gì vậy?,,0,2,0,0,0.001,,{}
+simulate-1@20261128-123900,S045,hoi_khi_thong_tin_doi,2,"em thấy tối nay có 2 lịch cùng giờ thì giải quyết như thế nào vậy admin. ‖ Lab sáng Thứ Ba 01/12 lớp L3B học phòng nào, mấy giờ?",,2,12,0,0,0.047,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S046,chi_nghe_tren_lop,1,lab M2 hạn khi nào?,,1,3,0,0,0.023,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S047,hoi_don_khi_doi_phong,1,"Tên repo nhóm đặt thế nào, có bắt buộc public không?",,1,6,0,0,0.02,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S048,chi_nghe_tren_lop,1,"Slide demo để ở đâu trong repo, CP4 hạn mấy giờ?",,1,2,0,0,0.018,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S049,hoi_khi_thong_tin_doi,2,"Lab M4 nộp file gì và nộp ở đâu? ‖ Tên repo nhóm đặt thế nào, có bắt buộc public không?",,2,8,0,0,0.042,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}
+simulate-1@20261128-123900,S050,hoi_khi_thong_tin_doi,2,"lịch học hôm nay của bọn em đến 20h, mà office hour diễn ra từ 19h - 21h30 thì c ‖ em thấy tối nay có 2 lịch cùng giờ thì giải quyết như thế nào vậy admin.",,2,12,0,0,0.043,T1 URLError: <urlopen error [Errno 11001] getaddrinfo failed>; T2 URLError: <urlopen error [Errno 11001] getaddrinfo failed>,{}

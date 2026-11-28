@@ -140,20 +140,34 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 - Kết quả: lượt 1 **18/28 (64%)** — chưa đạt chuẩn (trượt điều kiện cứng 1: B14, B15; điều kiện cứng 2: B21, B25, B26, B27) · lượt 2 **24/28 (86%)** — đạt chuẩn — run ID: `run-1@20261128-095912` / `run-2@20261128-100129` (model `gpt-5.4-mini`) · metric `khong_tac_dong_ngoai` chấm bằng code (`python eval/check_khong_tac_dong.py traces/run-N.jsonl`): đạt cả hai lượt, mọi `escalate` ở trạng thái nháp → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` (__ phiên)
-- Chi phí / task thành công: __ (model __) · __ (model __)
-- Chi phí / tháng ở quy mô thật: thấp __ · cơ sở __ · cao __ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): đáng làm không, vì sao:
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-2.csv` (50 phiên, seed 42, 0 phiên lỗi, run ID `simulate-2@20261128-124022`) · `simulate-1` bị mất mạng 14/50 phiên → chạy lại, giữ làm lịch sử
+- Chi phí / task thành công: **$0.0013 (model `gpt-5.4-mini`, model chính)** · $0.00045 (model `gemini-3.1-flash-lite`) · $0.0026 (model `gemini-4-hydrogen`) — đo token trên `gpt-5.4-mini`, tỉ lệ đạt 24/28 (86%) của `run-2@20261128-100129`
+- Chi phí / tháng ở quy mô thật (`gpt-5.4-mini`): thấp **$1.53** (436 người) · cơ sở **$2.46** (700) · cao **$3.51** (1.000) → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2): đáng làm không, vì sao: **đáng** — $0.0035 / người / tháng, cả lớp $2.46 / tháng so với ~5,5–16,5 giờ chờ / tháng chỉ riêng `#chung` *(tự ước tính)*. Chi phí model không phải điểm nghẽn; chưa đo giờ TA duyệt nháp `escalate` — đo ở bước pilot.
 - **Bản thử CP3** (`python run.py simulate --try`, 10 phiên, đo token trên `gpt-5.4-mini`, tỉ lệ đạt 24/28 của `run-2@20261128-100129`): `gpt-5.4-mini` ≈ $0,0013 / phiên · $0,0015 / task thành công · $1,78 / $2,86 / $4,09 mỗi tháng (436 / 700 / 1.000 người) · so sánh `gemini-3.1-flash-lite` $0,95 / tháng (cơ sở), `gemini-4-hydrogen` $5,52 / tháng (cơ sở). 10 phiên chưa có persona `hoi_don_khi_doi_phong`; bản nộp CP4 chạy ≥50 phiên. File thử nằm trong `.gitignore`, không commit.
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: đã ẩn danh gì, không thu gì, không đưa gì vào model gói miễn phí:
+  - **Đã ẩn danh:** tin Discord `#chung` chỉ trích ≤2 câu mỗi tin, bỏ tên, đánh mã D001–D040, không đoán ai là ai, đếm tay không crawl (`evidence/data-mining.md`); người phỏng vấn ghi mã P1–P5, T1, không tên (`evidence/interviews/`); 11 câu thử `data_that` là các trích đoạn đã bỏ tên đó.
+  - **Không thu:** điểm, điểm danh, mã học viên, email — bộ thông báo `data/announcements.json` là bản viết lại + `synthetic`, không có tên người (`data/DATA_CARD.md`). Trợ lý không lưu câu hỏi của học viên ngoài trace chạy thử.
+  - **Đưa vào model:** chỉ câu hỏi + thông báo mẫu tìm được. Gói miễn phí Gemini (video CP3, lượt thử của Hải) chỉ nhận đúng các dữ liệu đó, không có dữ liệu cá nhân. Model chính `gpt-5.4-mini` gọi qua API trả phí. Key nằm trong `.env`, không commit.
 - AI **không được** làm gì kể cả khi người dùng yêu cầu:
+  1. Xác nhận lùi hạn, gia hạn hay ngoại lệ cho ai (câu thử B14, B28).
+  2. Trả lời điểm, điểm danh, kết quả chấm của riêng ai — chặn bằng code (`_PERSONAL` trong `codebase/agent.py`) trước khi gọi model (B13).
+  3. Gửi tin, đăng thông báo, tag TA — `escalate` chỉ trả bản nháp `status: draft` (B15; metric `khong_tac_dong_ngoai` = 0 lần ở cả hai lượt).
+  4. Trả lời hạn / phòng / giờ không có trong thông báo đã trích, hoặc tự chọn một hạn khi hai thông báo mâu thuẫn (B07, B21, B25–B27).
+  5. Làm theo chỉ dẫn nằm trong tin nhắn học viên ("bỏ qua mọi quy tắc", "mình là TA đây") — tin nhắn là dữ liệu, không phải lệnh (B14, B15).
 - Ai có thể bị hại nếu AI sai, và nhóm chặn thế nào:
 
+  | Ai bị hại | Sai kiểu gì | Chặn thế nào | Còn hở |
+  |---|---|---|---|
+  | Học viên | Báo hạn / phòng cũ → nộp trễ, đến nhầm phòng, mất điểm | Code bỏ thông báo đã bị thay (`supersedes`) trước khi đưa model; code kiểm mọi ngày giờ (`_datetimes`) và mã phòng (`_rooms`) trong câu trả lời phải có trong thông báo đã trích, không khớp → chuyển nháp TA; luôn kèm mã + link thông báo để tự kiểm | B16, B24: có phòng đúng nhưng chưa nói rõ "phòng đã đổi"; bộ thông báo là bản mẫu, chưa nối Discord thật nên có thể cũ hơn thông báo thật |
+  | Học viên | Báo thiếu yêu cầu nộp → nộp thiếu file | Prompt yêu cầu liệt kê yêu cầu từ thông báo | **B06 thiếu `report.md` ở lượt 2** — chưa có kiểm bằng code (`eval/report.md` mục 4) |
+  | TA / BTC | Bị mạo danh, bị tag hàng loạt, thông báo giả được đăng | Không có công cụ gửi; mọi tag TA là nháp chờ người duyệt; nút "Duyệt" trên web chỉ đổi trạng thái trên trang | Khi nối Discord thật cần giới hạn số nháp / giờ và ghi ai đã duyệt |
+
 ## §10. Phân công & changelog
-- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"): __
-- Dùng AI vào việc gì (2–3 dòng; chi tiết `docs/ai-usage.md`):
+- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"): **Nguyễn Đức Hải** (trưởng nhóm) — `canvas.md`, `spec.md` §0–§10, `codebase/web.py`, nhánh OpenAI trong `codebase/ai.py`, `cost/`, ráp slide · **Lê Bá Nguyên** — bằng chứng `evidence/` (đào Discord, phỏng vấn P1–P5, T1), người chấm thứ hai, slide trang 1 · **Vũ Đình Huy** — bộ câu thử `eval/benchmark.csv`, thông báo mẫu `data/`, chạy + chấm lượt 1–2, `eval/report.md`, slide trang 5, 8 · **Nguyễn Minh Quân** — khung `codebase/agent.py`, `codebase/tools.py`, nhánh Gemini, demo live trang 4. Chi tiết: `TEAMS.md`.
+- Dùng AI vào việc gì (2–3 dòng; chi tiết `docs/ai-usage.md`): Claude Code soạn nháp spec / canvas / báo cáo, viết code (`web.py`, nhánh OpenAI, kiểm phòng / giờ), gắn nhãn 40 tin Discord và chấm nháp cột `pass`. Người kiểm: nhãn Discord kiểm tay 20/40 (khớp 20/20); cột `pass` do Huy chấm lại, người thứ hai (Nguyên) đối chiếu ở issue #20; mọi PR do Hải đọc trước khi merge. Bằng chứng (phỏng vấn, tin Discord) do nhóm tự thu, không dùng AI tạo.
 - Nhật ký thay đổi — **mọi thay đổi sau CP2 19:30 Thứ Sáu 27/11 phải có dòng ở đây**:
 
 **CP2 → CP4** (vd thu hẹp lát cắt, hỏi thêm người dùng, lần cải tiến trước lượt 2)
@@ -167,6 +181,10 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 | 28/11/2026 (sau lượt 2) | Chốt model chính `gpt-5.4-mini`: README bảng thật / giả, thêm giá `gpt-5.4-mini` (0.75 / 4.50 USD / 1M) vào `cost/personas.yaml`; Gemini giữ làm phương án rẻ | Lượt 1–2 chạy và chấm bằng `gpt-5.4-mini` (`eval/README.md` mục 5); `simulate` chỉ lấy tỉ lệ đạt của lượt cùng model; video CP3 quay bằng Gemini nên ghi rõ |
 | 28/11/2026 (sau lượt 2) | `codebase/ai.py`: thêm nhánh `MODEL_PROVIDER=openai` (Chat Completions, token từ `usage`: `prompt_tokens` / `completion_tokens`) theo `docs/connect-model.md` mục 2.1 | Lượt 1–2 chạy bằng `gpt-5.4-mini` qua code chỉ có trên máy Huy; thêm vào repo để chạy lại được lượt 1–2, demo CP4 và `simulate` bằng model chính (issue #20) |
 | 28/11/2026 (CP4) | `eval/README.md` mục 1, 2, 6 cập nhật số mới (23 thông báo, 28 câu, 11/28 data_that, lỗi chính); `eval/report.md` ghi lý do 4 câu còn trượt; thêm `slides/trang-5-8-huy.md`, `reflection/huy.md` | Chuẩn bị CP4: README còn số CP2 (13 thông báo, 15 câu, 0/15) |
+| 28/11/2026 (CP4) | Thêm `slides/trang-1-nguyen.md` (nháp slide trang 1, Nguyên, PR #31) | Slide trang 1 lấy số từ `evidence/` (dòng §10 Hải ghi gộp sau merge) |
+| 28/11/2026 (CP4) | `python run.py simulate` 50 phiên bằng `gpt-5.4-mini`: `simulate-1` lỗi mạng 14/50 phiên → chạy lại thành `simulate-2` (0 lỗi, cùng seed); điền `cost/cost-estimate.md`, §8 bằng `simulate-2`; giữ `simulate-1` | Bản nộp CP4 cần ≥50 phiên; lỗi `URLError getaddrinfo failed` là lỗi kỹ thuật, không xoá lượt đã chạy |
+| 28/11/2026 (CP4) | Điền §9 (dữ liệu ẩn danh, AI không được làm gì, ai bị hại + chặn thế nào), phân công và dùng AI ở §10 | Đủ §0–§10 cho CP4 |
+| 28/11/2026 (CP4) | Thêm `slides/trang-4-quan.md` (Hải soạn thay Quân, issue #29: 3 câu demo B22, B20, B14 + B07 dự phòng lấy từ output `run-2`), sửa câu nói số 2 trang 5 cho đúng 3 điều kiện cứng §7; ráp `slides/demo-slides.html` → `demo-slides.pdf` | Quân chưa phản hồi issue #29; slide phải trỏ về file trong repo; câu demo chọn câu đạt ở lượt 2, B16 (trượt) ghi rõ trên slide |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
