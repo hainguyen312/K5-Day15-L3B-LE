@@ -81,7 +81,7 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: lượt 1–2 chạy `gpt-5.4-mini` (OpenAI, nhánh `openai` trên máy Huy — xem `eval/README.md` mục 5) · `codebase/ai.py` trong repo nối `gemini-3.1-flash-lite` (Gemini API) |
+| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | **Model chính: `gpt-5.4-mini` (OpenAI)** — lượt 1–2 (`eval/run-1.csv`, `run-2.csv`) chạy và chấm bằng model này; demo CP4 và `simulate` cũng dùng model này. `gemini-3.1-flash-lite` (Gemini API) giữ làm phương án rẻ; video CP3 quay bằng Gemini. Chọn model trong `.env` (`MODEL_PROVIDER`, `MODEL_NAME`) |
 | Thông báo Discord | **Giả** | Bộ mẫu `data/announcements.json` (viết lại + `synthetic`), không đọc Discord thật |
 | Gửi tin / tag TA (`escalate`) | **Chỉ nháp** | Không gửi; nút "Duyệt" trên giao diện web chỉ đổi trạng thái trên trang |
 | Giao diện | **Thật** | Dòng lệnh `python run.py` · web `python codebase/web.py` (http://localhost:8000) |
