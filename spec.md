@@ -193,4 +193,5 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 
 | Thời điểm | Đổi gì | Vì sao |
 |---|---|---|
+| 28/11/2026 14:36 | Thêm `reflection/nguyen.md` | Reflection cá nhân, hạn 23:59 (guide 5.3, issue #27) |
 |  |  |  |
