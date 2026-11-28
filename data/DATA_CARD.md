@@ -11,14 +11,14 @@
 | | |
 |---|---|
 | Dùng để làm gì | Nguồn cho công cụ `search_announcements` (và `get_thread`) · căn cứ của `expected` trong bộ câu thử |
-| Từ đâu | **TB01–TB06:** viết lại từ tài liệu khoá có trong repo (`README.md`, `canvas.md`, `spec.md`, `eval/metric_spec.yaml`, `TEAMS.md`, `AGENTS.md`) — mỗi dòng có trường `source_ref` trỏ về file gốc. **TS01–TS07:** nhóm tự dựng (`synthetic`) |
+| Từ đâu | **TB01–TB06:** viết lại từ tài liệu khoá có trong repo (`README.md`, `canvas.md`, `spec.md`, `eval/metric_spec.yaml`, `TEAMS.md`, `AGENTS.md`) — mỗi dòng có trường `source_ref` trỏ về file gốc. **TS01–TS17:** nhóm tự dựng (`synthetic`) |
 | Xử lý những bước gì | Chọn các câu nói về hạn / nộp gì / nộp ở đâu → viết lại thành 1 thông báo / mốc · thêm trường `channel`, `posted_at`, `applies_to`, `supersedes`. Không có tên người, không có mã học viên. Không có script — viết tay |
-| Số dòng / số đoạn | 13 thông báo: 6 viết lại + 7 synthetic |
+| Số dòng / số đoạn | 23 thông báo: 6 viết lại + 17 synthetic (TS08–TS17 thêm cho CP3: phòng / giờ học, thread, lịch Gate) |
 | Phiên bản / ngày lấy | 27/11/2026, theo repo khung tại commit `6d20aec` |
 | Nhãn | TB* = thật (viết lại) · TS* = `synthetic` (trường `label`) |
 | Giới hạn | Chưa có thông báo Discord thật của khoá: TB* lấy từ tài liệu repo, `posted_at` và `channel` là giả định. TS* dùng tên "Lab mẫu M1–M4" để không nhầm với lab thật. Thiếu: thông báo dài nhiều ý, thông báo có ảnh / file đính kèm, thông báo bằng tiếng Anh, luồng trả lời (thread) |
 
-**Data `synthetic` (TS01–TS07):** viết tay, không dùng model sinh, không có seed. Mỗi thông báo dựng để thử một chỗ khó ở `spec.md` §5:
+**Data `synthetic` (TS01–TS17):** viết tay, không dùng model sinh, không có seed. Mỗi thông báo dựng để thử một chỗ khó ở `spec.md` §5:
 
 | Thông báo | Thử chỗ khó gì | Câu thử |
 |---|---|---|
@@ -26,17 +26,24 @@
 | TS03, TS04 | Hạn khác nhau theo lớp | B08 |
 | TS05, TS06 | Hai thông báo mâu thuẫn, không cái nào thay cái nào | B07 |
 | TS07 | Câu hỏi "nộp gì, ở đâu" bình thường | B04 |
+| TS08 → TS09 | Phòng đổi sát giờ (thông báo đổi phòng có `supersedes`) | B16 |
+| TS10, TS11 | Hai lịch trùng giờ, không cái nào thay cái nào | B17 |
+| *(không có)* | Không có thông báo lịch / daily standup | B18, B21 |
+| TS12 | Câu đã được trả lời ở thread khác | B19 |
+| TS13 → TS14 | Lịch Gate bị đổi (thông báo cũ bị thay) | B20 |
+| TS15 | Phòng / giờ học thường | B22 |
+| TS16, TS17 | Phòng / giờ khác nhau theo lớp, học viên không nói lớp | B23 |
 
-Người kiểm: **TB01–TB06 (6/6)** Claude (trợ lý AI) đối chiếu với file gốc trong repo ngày 27/11/2026 (hạn, mục phải nộp, đường dẫn đều khớp); Huy cần rà lại. **TS01–TS07** nhóm tự dựng, **chưa có người ngoài nhóm rà** — chưa kiểm tay đủ 13/13. Data tự dựng **không phải bằng chứng pain**.
+Người kiểm: **TB01–TB06 (6/6)** Claude (trợ lý AI) đối chiếu với file gốc trong repo ngày 27/11/2026 (hạn, mục phải nộp, đường dẫn đều khớp); Huy cần rà lại. **TS01–TS17** nhóm tự dựng, **chưa có người ngoài nhóm rà** — chưa kiểm tay đủ 23/23. TS08–TS17 do Huy thêm ngày 28/11, chưa ai rà lại. Data tự dựng **không phải bằng chứng pain**.
 
 ## Dataset 2 · Bộ câu thử (`eval/benchmark.csv`)
 
 | | |
 |---|---|
 | Dùng để làm gì | Chạy `python run.py eval`, chấm theo `eval/metric_spec.yaml` |
-| Từ đâu | Bản CP2: 15 câu nhóm tự viết (`tu_viet`). **Chưa có** câu từ người dùng thật |
+| Từ đâu | Bản CP2: 15 câu nhóm tự viết (`tu_viet`). CP3 thêm B16–B23: 6 câu `data_that` (trích ≤2 câu từ tin hỏi Discord `#chung` đã ghi ở `evidence/data-mining.md` §4, mã D010, D018, D019, D021, D025, D027, bỏ tên) + 2 câu `tu_viet` |
 | Xử lý những bước gì | Mỗi câu gắn với một thông báo (hoặc cố ý không có thông báo) và một lớp chỗ khó ở `spec.md` §5 (ghi trong cột `source`) |
-| Số dòng / số đoạn | 15 câu: thuong 5 · kho 7 · tu_choi 3 (2 câu tấn công) |
-| Phiên bản / ngày lấy | 27/11/2026 |
-| Nhãn | `tu_viet` |
-| Giới hạn | 0/15 câu từ người dùng / data thật — **chưa đạt ≥1/3**. Trước CP3 cần thêm câu lấy nguyên văn (đã bỏ tên) từ phỏng vấn (`evidence/interviews/P*.md`) và từ câu hỏi đếm được trên Discord (`evidence/data-mining.md`) để lên 20–30 câu, ≥1/3 `nguoi_dung` / `data_that` |
+| Số dòng / số đoạn | 23 câu: thuong 7 · kho 13 · tu_choi 3 (2 câu tấn công) |
+| Phiên bản / ngày lấy | CP2 27/11/2026 · thêm B16–B23 ngày 28/11/2026 |
+| Nhãn | `tu_viet` · `data_that` |
+| Giới hạn | **6/23 câu `data_that`, chưa đạt ≥1/3 (cần ≥8/23)** — chờ câu thật của Nguyên (`nguoi_dung`, từ phỏng vấn / TA). Câu `data_that` chỉ có câu hỏi; `expected` do nhóm viết dựa trên thông báo mẫu `synthetic`, không phải câu trả lời thật của TA. Các tin D0xx chỉ thuộc kênh `#chung`, 16–26/11 |
