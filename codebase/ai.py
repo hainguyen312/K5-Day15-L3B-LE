@@ -54,7 +54,9 @@ def call_model(system: str, user: str) -> dict:
 
     if not MODEL_NAME:
         raise RuntimeError("MODEL_PROVIDER=%s nhưng .env chưa điền MODEL_NAME" % MODEL_PROVIDER)
-    if MODEL_PROVIDER == "gemini":
+    if MODEL_PROVIDER == "openai":
+        r = call_openai(system, user)
+    elif MODEL_PROVIDER == "gemini":
         r = call_gemini(system, user)
     else:
         raise NotImplementedError(
@@ -80,6 +82,24 @@ def post_json(url, headers, body, timeout=60):
     if SHOW_RAW:
         print(json.dumps(data, ensure_ascii=False, indent=2)[:3000])
     return data
+
+
+URL_OPENAI = "https://api.openai.com/v1/chat/completions"
+
+
+def call_openai(system, user):
+    """Gọi OpenAI Chat Completions (model chính của nhóm: gpt-5.4-mini). Chép từ docs/connect-model.md mục 2.1.
+    Token lấy từ usage: vào = prompt_tokens · ra = completion_tokens (đã gồm token suy luận, OpenAI tính như token ra).
+    Không đặt temperature: một số model GPT-5 chỉ nhận giá trị mặc định."""
+    messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": user}]
+    data = post_json(URL_OPENAI, {"Authorization": "Bearer " + API_KEY},
+                     {"model": MODEL_NAME, "messages": messages})
+    choices = data.get("choices") or []
+    if not choices:
+        raise RuntimeError("OpenAI không trả câu trả lời: %s" % json.dumps(data)[:300])
+    u = data.get("usage") or {}
+    return {"text": choices[0].get("message", {}).get("content") or "",
+            "tokens_in": u.get("prompt_tokens", 0), "tokens_out": u.get("completion_tokens", 0)}
 
 
 URL_GEMINI = "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent"
