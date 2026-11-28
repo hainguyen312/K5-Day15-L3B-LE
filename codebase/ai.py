@@ -52,6 +52,8 @@ def call_model(system: str, user: str) -> dict:
         last = (user.strip().splitlines() or [""])[-1]
         return {"text": "[câu trả lời giả — chưa nối model] " + last[:60], "model": "fake", "tokens_in": 0, "tokens_out": 0}
 
+    if not MODEL_NAME:
+        raise RuntimeError("MODEL_PROVIDER=%s nhưng .env chưa điền MODEL_NAME" % MODEL_PROVIDER)
     if MODEL_PROVIDER == "gemini":
         r = call_gemini(system, user)
     else:
