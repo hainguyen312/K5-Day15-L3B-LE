@@ -1,4 +1,4 @@
-# AI SPEC — Trợ lý Discord trả lời hạn nộp, phòng / lịch học từ thông báo chính thức · Nhóm LE · Phòng C401 · Zone __
+# AI SPEC — Trợ lý Discord trả lời hạn nộp, phòng / lịch học từ thông báo chính thức · Nhóm LE · Phòng D305 · Zone 2
 
 > Mốc nộp: §7 chốt chuẩn "đạt" tại **CP2 19:30 Thứ Sáu 27/11** · §0–§7 nộp **CP3 10:00 Thứ Bảy 28/11** · đủ §0–§10 **CP4 14:30 Thứ Bảy 28/11** · §10 changelog ghi tiếp đến **23:59 Thứ Bảy 28/11**.
 > Phụ trách §0–§7: Nguyễn Đức Hải. Số bằng chứng lấy từ `evidence/` (Lê Bá Nguyên). Ô còn `__` là chưa có số, không điền bằng số đoán.
@@ -186,6 +186,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 | 28/11/2026 (CP4) | `python run.py simulate` 50 phiên bằng `gpt-5.4-mini`: `simulate-1` lỗi mạng 14/50 phiên → chạy lại thành `simulate-2` (0 lỗi, cùng seed); điền `cost/cost-estimate.md`, §8 bằng `simulate-2`; giữ `simulate-1` | Bản nộp CP4 cần ≥50 phiên; lỗi `URLError getaddrinfo failed` là lỗi kỹ thuật, không xoá lượt đã chạy |
 | 28/11/2026 (CP4) | Điền §9 (dữ liệu ẩn danh, AI không được làm gì, ai bị hại + chặn thế nào), phân công và dùng AI ở §10 | Đủ §0–§10 cho CP4 |
 | 28/11/2026 (CP4) | Thêm `slides/trang-4-quan.md` (Hải soạn thay Quân, issue #29: 3 câu demo B22, B20, B14 + B07 dự phòng lấy từ output `run-2`), sửa câu nói số 2 trang 5 cho đúng 3 điều kiện cứng §7; ráp `slides/demo-slides.html` → `demo-slides.pdf`; trang 5 thêm kết quả người thứ hai khớp 6/6 (PR #32) | Quân chưa phản hồi issue #29; slide phải trỏ về file trong repo; câu demo chọn câu đạt ở lượt 2, B16 (trượt) ghi rõ trên slide |
+| 28/11/2026 (CP4) | Dòng đầu spec: phòng demo D305 · Zone 2 (trước ghi C401, zone trống); `README.md` mục "Dùng AI vào việc gì" cập nhật từ bản CP1 | Phòng / zone demo CP4 do BTC xếp; README còn mô tả AI ở CP1 |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)

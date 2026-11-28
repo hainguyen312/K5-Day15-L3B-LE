@@ -91,7 +91,7 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 2–3 dòng (bắt buộc): nhóm dùng công cụ AI nào để làm gì, người kiểm lại phần nào. Chi tiết: [docs/ai-usage.md](docs/ai-usage.md). Coding agent đọc [AGENTS.md](AGENTS.md).
 
-Nhóm dùng Claude Code (coding agent) để đọc khung repo, gợi ý chia việc và soạn nháp `canvas.md`, `evidence/hypothesis.md`. Nhóm đọc lại, sửa lát cắt và ngưỡng giả thuyết trước khi commit. Bằng chứng (phỏng vấn, khảo sát, số liệu) do nhóm tự thu thập, không dùng AI tạo ra.
+Nhóm dùng Claude Code (coding agent) để soạn nháp spec / canvas / báo cáo / slide, viết code (`codebase/web.py`, nhánh OpenAI trong `codebase/ai.py`, kiểm phòng / giờ trong `agent.py`), gắn nhãn 40 tin Discord và chấm nháp cột `pass`. Người kiểm: nhãn Discord kiểm tay 20/40 tin (khớp 20/20); cột `pass` do Huy chấm, Nguyên chấm độc lập 6 output lượt 2 (khớp 6/6, `eval/README.md` mục 3); mọi PR do Hải đọc trước khi merge. Bằng chứng (phỏng vấn, tin Discord) do nhóm tự thu, không dùng AI tạo.
 
 ## File mẫu — điền ở bước nào
 
