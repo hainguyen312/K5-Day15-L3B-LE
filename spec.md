@@ -164,6 +164,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 | 28/11/2026 (CP3, sau lượt 1) | `codebase/agent.py`: sửa prompt SYSTEM — câu logistics không có căn cứ phải gắn `KHONG_CO` + nháp tag TA; `TU_CHOI` phải chỉ hỏi TA và nêu hạn chính thức | Lượt 1 trượt điều kiện cứng 1 (B14, B15) và 2 (B21, B25, B26, B27), 18/28 = 64%; lượt 2 24/28 = 86%, đạt chuẩn §7 (`eval/report.md`) |
 | 28/11/2026 (sau lượt 2) | Thêm `codebase/web.py` (giao diện web kiểu kênh Discord, gọi đúng `answer()`; nút "Duyệt" bản nháp chỉ đổi trạng thái trên trang) và `eval/check_khong_tac_dong.py` (chấm metric `khong_tac_dong_ngoai` từ trace). Không đổi `agent.py`, `tools.py`, câu thử, kết quả các lượt | Demo dễ nhìn hơn dòng lệnh (CP4); metric 4 có grader `code` cần script chạy lại được |
 | 28/11/2026 (sau lượt 2) | Chốt model chính `gpt-5.4-mini`: README bảng thật / giả, thêm giá `gpt-5.4-mini` (0.75 / 4.50 USD / 1M) vào `cost/personas.yaml`; Gemini giữ làm phương án rẻ | Lượt 1–2 chạy và chấm bằng `gpt-5.4-mini` (`eval/README.md` mục 5); `simulate` chỉ lấy tỉ lệ đạt của lượt cùng model; video CP3 quay bằng Gemini nên ghi rõ |
+| 28/11/2026 (CP3) | `codebase/ai.py`: thêm nhánh `openai` (hàm `call_openai`, token từ `usage`) | Lượt 1–2 chạy bằng `gpt-5.4-mini`; không có nhánh này thì không chạy lại được lượt 1–2 bằng lệnh trong README |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)

@@ -56,6 +56,8 @@ def call_model(system: str, user: str) -> dict:
         raise RuntimeError("MODEL_PROVIDER=%s nhưng .env chưa điền MODEL_NAME" % MODEL_PROVIDER)
     if MODEL_PROVIDER == "gemini":
         r = call_gemini(system, user)
+    elif MODEL_PROVIDER == "openai":
+        r = call_openai(system, user)
     else:
         raise NotImplementedError(
             "chưa viết phần gọi model thật cho MODEL_PROVIDER=%s trong codebase/ai.py — xem docs/connect-model.md"
@@ -103,3 +105,18 @@ def call_gemini(system, user):
     return {"text": text,
             "tokens_in": u.get("promptTokenCount", 0),
             "tokens_out": u.get("candidatesTokenCount", 0) + u.get("thoughtsTokenCount", 0)}
+
+
+URL_OPENAI = "https://api.openai.com/v1/chat/completions"
+
+
+def call_openai(system, user):
+    """Gọi OpenAI chat/completions (MODEL_PROVIDER=openai). Token lấy từ usage của API:
+    vào = prompt_tokens · ra = completion_tokens (đã gồm token suy nghĩ của model suy luận).
+    Không gửi temperature vì một số model mới từ chối tham số này. Dùng cho lượt 1–2 (gpt-5.4-mini)."""
+    messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": user}]
+    data = post_json(URL_OPENAI, {"Authorization": "Bearer " + API_KEY},
+                     {"model": MODEL_NAME, "messages": messages})
+    u = data["usage"]
+    return {"text": data["choices"][0]["message"]["content"],
+            "tokens_in": u["prompt_tokens"], "tokens_out": u["completion_tokens"]}
