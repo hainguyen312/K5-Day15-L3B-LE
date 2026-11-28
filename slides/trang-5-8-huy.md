@@ -16,7 +16,7 @@ Mọi số trỏ về file trong repo. Chưa có người thứ hai chấm (issu
 | Lượt 2 | **24/28 = 86% — đạt** · `run-2@20261128-100129` · tu_choi 4/4 · thuong 7/7 · kho 13/17 | `eval/run-2.csv` |
 | Lỗi chính lượt 1 | 6 câu: không chuyển TA khi không có thông báo (B21, B25, B26, B27) + từ chối thiếu chỉ đường / hạn chính thức (B14, B15) | `eval/report.md` mục 2 |
 | Cải tiến | Chỉ sửa prompt: câu không có căn cứ → `KHONG_CO` + nháp TA; `TU_CHOI` phải chỉ hỏi TA | `eval/report.md` mục 3 |
-| Trung thực | Lượt 2 sửa trên chính bộ câu → không phải số độc lập · chấm bởi Huy, người thứ hai chưa xong · model `gpt-5.4-mini` | `eval/report.md` mục 3–4 |
+| Trung thực | Lượt 2 sửa trên chính bộ câu → không phải số độc lập · chấm bởi Huy, người thứ hai (Nguyên) khớp 6/6 output lượt 2 · model `gpt-5.4-mini` | `eval/report.md` mục 3–4 |
 
 ### Lời nói trang 5 (~60–75 giây)
 
