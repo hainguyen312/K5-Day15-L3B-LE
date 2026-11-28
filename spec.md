@@ -166,6 +166,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 | 28/11/2026 (sau lượt 2) | Thêm `codebase/web.py` (giao diện web kiểu kênh Discord, gọi đúng `answer()`; nút "Duyệt" bản nháp chỉ đổi trạng thái trên trang) và `eval/check_khong_tac_dong.py` (chấm metric `khong_tac_dong_ngoai` từ trace). Không đổi `agent.py`, `tools.py`, câu thử, kết quả các lượt | Demo dễ nhìn hơn dòng lệnh (CP4); metric 4 có grader `code` cần script chạy lại được |
 | 28/11/2026 (sau lượt 2) | Chốt model chính `gpt-5.4-mini`: README bảng thật / giả, thêm giá `gpt-5.4-mini` (0.75 / 4.50 USD / 1M) vào `cost/personas.yaml`; Gemini giữ làm phương án rẻ | Lượt 1–2 chạy và chấm bằng `gpt-5.4-mini` (`eval/README.md` mục 5); `simulate` chỉ lấy tỉ lệ đạt của lượt cùng model; video CP3 quay bằng Gemini nên ghi rõ |
 | 28/11/2026 (sau lượt 2) | `codebase/ai.py`: thêm nhánh `MODEL_PROVIDER=openai` (Chat Completions, token từ `usage`: `prompt_tokens` / `completion_tokens`) theo `docs/connect-model.md` mục 2.1 | Lượt 1–2 chạy bằng `gpt-5.4-mini` qua code chỉ có trên máy Huy; thêm vào repo để chạy lại được lượt 1–2, demo CP4 và `simulate` bằng model chính (issue #20) |
+| 28/11/2026 (CP4) | `eval/README.md` mục 1, 2, 6 cập nhật số mới (23 thông báo, 28 câu, 11/28 data_that, lỗi chính); `eval/report.md` ghi lý do 4 câu còn trượt; thêm `slides/trang-5-8-huy.md`, `reflection/huy.md` | Chuẩn bị CP4: README còn số CP2 (13 thông báo, 15 câu, 0/15) |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
