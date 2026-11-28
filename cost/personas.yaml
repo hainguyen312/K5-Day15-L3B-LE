@@ -34,7 +34,12 @@ personas:           # ≥3 kiểu người dùng; share cộng lại = 1
 # Mỗi lượt hỏi lấy ngẫu nhiên một đầu vào trong eval/benchmark.csv (type thuong và kho).
 
 prices:             # USD / 1 triệu token — further-reading/model-prices.md của repo đề (BTC tra 25/11/2026). ≥2 mức model
-                    # Thêm đúng tên MODEL_NAME đang dùng trong .env nếu khác các dòng dưới, để simulate tính được "thực đo".
+                    # Model chính: gpt-5.4-mini (lượt 1–2 chạy và chấm bằng model này) → simulate với .env MODEL_NAME=gpt-5.4-mini.
+                    # Gemini: phương án rẻ để so sánh 3 kịch bản chi phí.
+  - model: gpt-5.4-mini
+    input: 0.75
+    output: 4.50
+    source: "further-reading/model-prices.md (repo đề) · https://developers.openai.com/api/docs/pricing · BTC xem 25/11/2026 · tầng Nhỏ · model chính của nhóm"
   - model: gemini-3.1-flash-lite
     input: 0.25
     output: 1.50
