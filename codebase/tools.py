@@ -80,7 +80,7 @@ def search_announcements(query: str, top_k: int = 5) -> list:
 @tool
 def get_thread(announcement_id: str) -> dict:
     """get_thread — lấy chuỗi thông báo liên quan (bản gốc, các bản đính chính / thay thế).
-    Input: mã thông báo (str, vd "TB-01").
+    Input: mã thông báo (str, vd "TB01").
     Output: {"chain": [thông báo, cũ → mới], "latest": mã bản mới nhất còn hiệu lực}
             hoặc {"chain": [], "latest": None} nếu không có mã đó.
     Tác động ra ngoài: Không."""
