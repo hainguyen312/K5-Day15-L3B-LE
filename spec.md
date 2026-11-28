@@ -105,12 +105,12 @@ flowchart TD
 | Kịch bản | Lớp (1–4) | Hành vi mong muốn (nói gì, hiện gì, cho làm gì tiếp) | Câu thử |
 |---|---|---|---|
 | Hỏi hạn / phòng / giờ học của buổi có thông báo rõ | 1 | Trả lời hạn + nộp gì + nộp ở đâu (hoặc giờ + phòng), kèm trích và link thông báo | B01–B05, B22 |
-| Hỏi hạn / lịch một bài không có thông báo nào | 1 | "Chưa có thông báo chính thức nào về hạn bài này" + soạn nháp tag TA; không đoán | B09, B18, B21 |
+| Hỏi hạn / lịch một bài không có thông báo nào | 1 | "Chưa có thông báo chính thức nào về hạn bài này" + soạn nháp tag TA; không đoán | B09, B18, B21, B25, B26, B27 |
 | Hỏi "hạn nộp là khi nào?" không nói bài nào | 2 | Hỏi lại một câu: bài / ngày nào; không tự chọn bài | B10, B11 (viết tắt, không dấu) |
 | Hai thông báo ghi hai hạn khác nhau, không cái nào ghi là đính chính | 1 · 4 | Nêu cả hai, nói rõ đang mâu thuẫn, soạn nháp tag TA; không chọn hộ | B07, B17 |
 | Thông báo cũ đã bị thay bằng thông báo đính chính | 4 | Chỉ dùng thông báo mới, nhắc "hạn đã đổi so với thông báo ngày …" | B06, B20 |
-| Hỏi điểm / điểm danh / xin gia hạn cho riêng mình | 3 | Từ chối nhẹ, nói việc này TA quyết, soạn nháp chuyển TA | B13 |
-| Phòng học đã đổi sát giờ (thông báo đổi phòng thay thông báo cũ) | 1 · 4 | Chỉ nêu phòng mới theo thông báo mới nhất, nhắc "đã đổi so với thông báo lúc …", kèm link | B16 |
+| Hỏi điểm / điểm danh / xin gia hạn / xin nghỉ cho riêng mình | 3 | Từ chối nhẹ, nói việc này TA quyết, soạn nháp chuyển TA | B13, B28 |
+| Phòng học đã đổi sát giờ (thông báo đổi phòng thay thông báo cũ) | 1 · 4 | Chỉ nêu phòng mới theo thông báo mới nhất, nhắc "đã đổi so với thông báo lúc …", kèm link | B16, B24 |
 | Hạn khác nhau theo lớp (L3A / L3B), học viên không nói lớp nào | 2 · 4 | Hỏi lại lớp, hoặc nêu đủ hạn của từng lớp kèm mã thông báo; không đưa một hạn chung | B08, B23 |
 | Hỏi có được sửa metric / chuẩn "đạt" sau CP2 không | 4 | Nói rõ không được sửa sau CP2 và hậu quả, kèm thông báo | B12 |
 | Câu đã được trả lời trong thread khác | 1 | Trả lời theo thông báo, kèm link thread đã trả lời | B19 |
@@ -159,7 +159,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
-| 28/11/2026 (CP3) | Thêm câu thử B16–B23 (23 câu; 6 `data_that`) vào `eval/benchmark.csv`; thêm thông báo synthetic TS08–TS17 vào `data/announcements.json`; cập nhật `data/DATA_CARD.md` và cột "Câu thử" ở §5. Không đụng §7, `metric_spec.yaml` | Phủ hướng (c) còn thiếu ở §5: phòng đổi sát giờ, hỏi phòng không nói lớp, không có thông báo lịch, câu đã trả lời ở thread khác; kéo bộ câu lên 20–30 câu và có câu từ data thật (Discord D010–D027) |
+| 28/11/2026 (CP3) | Thêm câu thử B16–B28 (28 câu; 11 `data_that`) vào `eval/benchmark.csv`; thêm thông báo synthetic TS08–TS17 vào `data/announcements.json`; cập nhật `data/DATA_CARD.md` và cột "Câu thử" ở §5. Không đụng §7, `metric_spec.yaml` | Phủ hướng (c) còn thiếu ở §5: phòng đổi sát giờ, hỏi phòng không nói lớp, không có thông báo lịch, câu đã trả lời ở thread khác; sửa expected / pass_criterion B24 cho đạt cả khi hỏi lại lớp / buổi (Hải đề xuất, trước lượt 1, chưa có lượt chạy nào); kéo bộ câu lên 20–30 câu và có câu từ data thật (Discord D002–D031, 5 câu do Nguyên gửi ở issue #9) |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
