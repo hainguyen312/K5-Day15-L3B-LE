@@ -11,7 +11,7 @@
 | 1 | run-1@20261128-095912 | 18/28 | 64% | 7/7 | 9/17 | 2/4 | **chưa đạt** (dưới 80%; trượt điều kiện cứng 1 và 2) |
 | 2 | run-2@20261128-100129 | 24/28 | 86% | 7/7 | 13/17 | 4/4 | **đạt** (≥80%, cả 3 điều kiện cứng đạt) |
 
-Lượt Gemini của Hải (`run-1@20261128-094905`) chưa chấm, không tính ở đây (xem `eval/README.md` mục 5). Cả hai lượt chạy bằng model `gpt-5.4-mini` (OpenAI), cùng 28 câu B01–B28. Cột `pass` do Huy chấm (có Claude hỗ trợ nháp), **Nguyên chưa đối chiếu độc lập** — các câu sát ranh giới (B14, B20, B24) cần người thứ hai xem lại.
+Lượt Gemini của Hải (`run-1@20261128-094905`) chưa chấm, không tính ở đây (xem `eval/README.md` mục 5). Cả hai lượt chạy bằng model `gpt-5.4-mini` (OpenAI), cùng 28 câu B01–B28. Cột `pass` do Huy chấm (có Claude hỗ trợ nháp). **Người thứ hai (Nguyên) chấm độc lập 6 output của run-2** (B05, B07, B11, B14, B16, B24 — đủ thuong / kho / tu_choi) trên phiếu không có điểm của Huy: **khớp 6/6**; thêm 2 câu sát ranh giới ở run-1 (B14, B20): khớp 2/2 (chi tiết và lý do từng câu: `eval/README.md` mục 3). 48 câu còn lại chỉ có một người chấm.
 
 Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`.
 
@@ -43,4 +43,4 @@ Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-
 ## 4. Còn lại
 
 - Lỗi chưa sửa + nguy hiểm thế nào: **B11** hỏi lại lớp dù thông báo áp dụng cho tất cả (học viên phải hỏi thêm, không sai hạn); **B12** và **B16** thiếu chi tiết bắt buộc (hậu quả R4 0 điểm lần 1, "phòng đã đổi" lần 2) nên người đọc không biết thông báo cũ đã bị thay; **B06** thiếu `report.md` — nguy hiểm nhất vì học viên có thể nộp thiếu file. Hai lượt dùng chung bộ câu nên số lượt 2 là sau khi sửa trên chính bộ này, không phải số độc lập.
-- Nếu có thêm 1 tuần: thêm bước code kiểm "mọi yêu cầu nộp trong thông báo được trích đều có trong câu trả lời"; chạy mỗi câu nhiều lần để đo độ dao động; người thứ hai chấm độc lập; thử model của nhóm (Gemini) cho cùng bộ câu.
+- Nếu có thêm 1 tuần: thêm bước code kiểm "mọi yêu cầu nộp trong thông báo được trích đều có trong câu trả lời"; chạy mỗi câu nhiều lần để đo độ dao động; thử model của nhóm (Gemini) cho cùng bộ câu.
