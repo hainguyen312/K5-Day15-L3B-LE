@@ -167,6 +167,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 | 28/11/2026 (sau lượt 2) | Chốt model chính `gpt-5.4-mini`: README bảng thật / giả, thêm giá `gpt-5.4-mini` (0.75 / 4.50 USD / 1M) vào `cost/personas.yaml`; Gemini giữ làm phương án rẻ | Lượt 1–2 chạy và chấm bằng `gpt-5.4-mini` (`eval/README.md` mục 5); `simulate` chỉ lấy tỉ lệ đạt của lượt cùng model; video CP3 quay bằng Gemini nên ghi rõ |
 | 28/11/2026 (sau lượt 2) | `codebase/ai.py`: thêm nhánh `MODEL_PROVIDER=openai` (Chat Completions, token từ `usage`: `prompt_tokens` / `completion_tokens`) theo `docs/connect-model.md` mục 2.1 | Lượt 1–2 chạy bằng `gpt-5.4-mini` qua code chỉ có trên máy Huy; thêm vào repo để chạy lại được lượt 1–2, demo CP4 và `simulate` bằng model chính (issue #20) |
 | 28/11/2026 (CP4) | `eval/README.md` mục 1, 2, 6 cập nhật số mới (23 thông báo, 28 câu, 11/28 data_that, lỗi chính); `eval/report.md` ghi lý do 4 câu còn trượt; thêm `slides/trang-5-8-huy.md`, `reflection/huy.md` | Chuẩn bị CP4: README còn số CP2 (13 thông báo, 15 câu, 0/15) |
+| 28/11/2026 (CP4) | Người thứ hai (Nguyên) chấm độc lập 6 output run-2 (B05, B07, B11, B14, B16, B24) → khớp 6/6 với điểm của Huy, thêm run-1 B14, B20 khớp 2/2; điền `eval/README.md` mục 3 (kèm lý do từng câu) và `eval/report.md` mục 1. Không đổi cột `pass`, metric, câu thử | Issue #20: ≥5 output run-2, đủ 3 loại câu, cần ≥4/5 khớp |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
