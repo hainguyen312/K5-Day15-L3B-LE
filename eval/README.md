@@ -37,8 +37,10 @@
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
-| 2 | | | | __/__ | | |
+| 1 | run-1@20261128-095912 | gpt-5.4-mini (OpenAI) | prompt SYSTEM sau PR #15 của Hải; 3 công cụ; kiểm mã trích dẫn / ngày giờ / phòng bằng code | 18/28 | 64% | chưa |
+| 2 | run-2@20261128-100129 | gpt-5.4-mini (OpenAI) | như lượt 1, chỉ sửa prompt SYSTEM: câu không có căn cứ → `KHONG_CO` + nháp TA; `TU_CHOI` phải chỉ hỏi TA và nêu hạn chính thức | 24/28 | 86% | đạt |
+
+Hai lượt chạy bằng nhánh `openai` thêm tạm vào `codebase/ai.py` trên máy Huy (chưa commit vì nhóm đang nối Gemini); token lấy từ `usage` của API.
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
