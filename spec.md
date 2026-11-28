@@ -33,8 +33,8 @@ Quy mô: khoá AI20K K5 có hơn 1.000 học viên, lớp L3 hơn 700 học viê
 |---|---|---|---|---|---|---|
 | **A2 mở rộng · hạn nộp + phòng / lịch học từ thông báo chính thức** | 1/3 học viên phỏng vấn phải hỏi lại; 2/3 từng nộp sai (n = 3) | 12 câu hỏi logistics công khai / 11 ngày ở `#chung` → ~33 / tháng *(tự ước tính, ngoại suy tuyến tính, chỉ một kênh)* | ~10 phút hỏi bạn · ~30 phút chờ lab coach (P3); nộp sai có thể bị trừ điểm (P3) | ~33 × 10–30 phút ≈ 5,5–16,5 giờ chờ / tháng chỉ riêng câu hỏi công khai ở `#chung` *(tự ước tính)* | Kịp: code tra thông báo đã xử lý "thông báo bị thay"; chỉ thêm dữ liệu thông báo phòng / lịch | **Chọn** |
 | A2 hẹp · chỉ hạn nộp | 1/3 (n = 3) | 3 câu / 11 ngày ở `#chung`; TA 2–3 câu / buổi | TA 1–2 giây / câu; P3 ~10 phút | Nhỏ | Kịp | Gộp vào hướng trên |
-| A1 · Tutor dưới video pre-class | Có data hành vi thật (436 học viên có hoạt động, `data/preclass/`) | __ | __ | __ | Kịp | Loại |
-| A5 · Soạn thông báo phòng cho key coach | Ít người dùng (key coach / Day Lead) | Mỗi tối trước buổi lab *(theo file track)* | __ | __ | Kịp, nhưng data chỉ có bản giả lập | Loại |
+| A1 · Tutor dưới video pre-class | Có data hành vi thật (436 học viên có hoạt động, `data/preclass/`) | chưa đo (hướng loại) | chưa đo | chưa đo | Kịp | Loại |
+| A5 · Soạn thông báo phòng cho key coach | Ít người dùng (key coach / Day Lead) | Mỗi tối trước buổi lab *(theo file track)* | chưa đo (hướng loại) | chưa đo | Kịp, nhưng data chỉ có bản giả lập | Loại |
 
 - **Impact / tháng** của hướng chọn = ~33 câu hỏi × 10–30 phút ≈ 5,5–16,5 giờ / tháng — nguồn: 12/40 tin logistics trong 11 ngày (`evidence/data-mining.md`) ngoại suy lên 30 ngày *(tự ước tính)* · 10 / 30 phút từ P3 (`evidence/interviews/P3.md`). Chưa tính người không hỏi công khai (P3 hỏi bạn) và kênh khác → có thể thấp hơn thực tế; chưa tính điểm bị trừ do nộp sai.
 - Hướng ĐÃ LOẠI + vì sao:
@@ -144,6 +144,7 @@ Kịch bản làm nhóm sợ khi demo: **thông báo cũ đã bị thay** (đổ
 - Chi phí / task thành công: __ (model __) · __ (model __)
 - Chi phí / tháng ở quy mô thật: thấp __ · cơ sở __ · cao __ → chi tiết `cost/cost-estimate.md`
 - So với impact / người / tháng (§2): đáng làm không, vì sao:
+- **Bản thử CP3** (`python run.py simulate --try`, 10 phiên, đo token trên `gpt-5.4-mini`, tỉ lệ đạt 24/28 của `run-2@20261128-100129`): `gpt-5.4-mini` ≈ $0,0013 / phiên · $0,0015 / task thành công · $1,78 / $2,86 / $4,09 mỗi tháng (436 / 700 / 1.000 người) · so sánh `gemini-3.1-flash-lite` $0,95 / tháng (cơ sở), `gemini-4-hydrogen` $5,52 / tháng (cơ sở). 10 phiên chưa có persona `hoi_don_khi_doi_phong`; bản nộp CP4 chạy ≥50 phiên. File thử nằm trong `.gitignore`, không commit.
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: đã ẩn danh gì, không thu gì, không đưa gì vào model gói miễn phí:
