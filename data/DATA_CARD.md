@@ -26,9 +26,9 @@
 | TS03, TS04 | Hạn khác nhau theo lớp | B08 |
 | TS05, TS06 | Hai thông báo mâu thuẫn, không cái nào thay cái nào | B07 |
 | TS07 | Câu hỏi "nộp gì, ở đâu" bình thường | B04 |
-| TS08 → TS09 | Phòng đổi sát giờ (thông báo đổi phòng có `supersedes`) | B16 |
+| TS08 → TS09 | Phòng đổi sát giờ (thông báo đổi phòng có `supersedes`) | B16, B24 |
 | TS10, TS11 | Hai lịch trùng giờ, không cái nào thay cái nào | B17 |
-| *(không có)* | Không có thông báo lịch / daily standup | B18, B21 |
+| *(không có)* | Không có thông báo lịch / daily standup / office hour / link online / vị trí phòng | B18, B21, B25, B26, B27 |
 | TS12 | Câu đã được trả lời ở thread khác | B19 |
 | TS13 → TS14 | Lịch Gate bị đổi (thông báo cũ bị thay) | B20 |
 | TS15 | Phòng / giờ học thường | B22 |
@@ -41,9 +41,9 @@ Người kiểm: **TB01–TB06 (6/6)** Claude (trợ lý AI) đối chiếu vớ
 | | |
 |---|---|
 | Dùng để làm gì | Chạy `python run.py eval`, chấm theo `eval/metric_spec.yaml` |
-| Từ đâu | Bản CP2: 15 câu nhóm tự viết (`tu_viet`). CP3 thêm B16–B23: 6 câu `data_that` (trích ≤2 câu từ tin hỏi Discord `#chung` đã ghi ở `evidence/data-mining.md` §4, mã D010, D018, D019, D021, D025, D027, bỏ tên) + 2 câu `tu_viet` |
+| Từ đâu | Bản CP2: 15 câu nhóm tự viết (`tu_viet`). CP3 thêm B16–B28: 11 câu `data_that` (trích ≤2 câu từ tin hỏi Discord `#chung`, bỏ tên; mã D010, D018, D019, D021, D025, D027 từ `evidence/data-mining.md` §4 và D002, D016, D024, D026, D031 do Nguyên gửi ở issue #9) + 2 câu `tu_viet` |
 | Xử lý những bước gì | Mỗi câu gắn với một thông báo (hoặc cố ý không có thông báo) và một lớp chỗ khó ở `spec.md` §5 (ghi trong cột `source`) |
-| Số dòng / số đoạn | 23 câu: thuong 7 · kho 13 · tu_choi 3 (2 câu tấn công) |
-| Phiên bản / ngày lấy | CP2 27/11/2026 · thêm B16–B23 ngày 28/11/2026 |
+| Số dòng / số đoạn | 28 câu: thuong 7 · kho 17 · tu_choi 4 (2 câu tấn công) |
+| Phiên bản / ngày lấy | CP2 27/11/2026 · thêm B16–B28 ngày 28/11/2026 |
 | Nhãn | `tu_viet` · `data_that` |
-| Giới hạn | **6/23 câu `data_that`, chưa đạt ≥1/3 (cần ≥8/23)** — chờ câu thật của Nguyên (`nguoi_dung`, từ phỏng vấn / TA). Câu `data_that` chỉ có câu hỏi; `expected` do nhóm viết dựa trên thông báo mẫu `synthetic`, không phải câu trả lời thật của TA. B20 dùng câu thật D019 nhưng TS13/TS14 dựng lại tình huống "lịch bị dời"; trên Discord thật admin trả lời học viên là xem nhầm — khi demo phải nói rõ là tình huống dựng lại. Các tin D0xx chỉ thuộc kênh `#chung`, 16–26/11 |
+| Giới hạn | **11/28 câu `data_that` (39%), đạt ≥1/3**; chưa có câu `nguoi_dung` (lời P3, T1 không phải câu hỏi nguyên văn). Câu `data_that` chỉ có câu hỏi; `expected` do nhóm viết dựa trên thông báo mẫu `synthetic`, không phải câu trả lời thật của TA. B20 dùng câu thật D019 nhưng TS13/TS14 dựng lại tình huống "lịch bị dời"; trên Discord thật admin trả lời học viên là xem nhầm — khi demo phải nói rõ là tình huống dựng lại. Các tin D0xx chỉ thuộc kênh `#chung`, 16–26/11 |
