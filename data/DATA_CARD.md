@@ -46,4 +46,4 @@ Người kiểm: **TB01–TB06 (6/6)** Claude (trợ lý AI) đối chiếu vớ
 | Số dòng / số đoạn | 23 câu: thuong 7 · kho 13 · tu_choi 3 (2 câu tấn công) |
 | Phiên bản / ngày lấy | CP2 27/11/2026 · thêm B16–B23 ngày 28/11/2026 |
 | Nhãn | `tu_viet` · `data_that` |
-| Giới hạn | **6/23 câu `data_that`, chưa đạt ≥1/3 (cần ≥8/23)** — chờ câu thật của Nguyên (`nguoi_dung`, từ phỏng vấn / TA). Câu `data_that` chỉ có câu hỏi; `expected` do nhóm viết dựa trên thông báo mẫu `synthetic`, không phải câu trả lời thật của TA. Các tin D0xx chỉ thuộc kênh `#chung`, 16–26/11 |
+| Giới hạn | **6/23 câu `data_that`, chưa đạt ≥1/3 (cần ≥8/23)** — chờ câu thật của Nguyên (`nguoi_dung`, từ phỏng vấn / TA). Câu `data_that` chỉ có câu hỏi; `expected` do nhóm viết dựa trên thông báo mẫu `synthetic`, không phải câu trả lời thật của TA. B20 dùng câu thật D019 nhưng TS13/TS14 dựng lại tình huống "lịch bị dời"; trên Discord thật admin trả lời học viên là xem nhầm — khi demo phải nói rõ là tình huống dựng lại. Các tin D0xx chỉ thuộc kênh `#chung`, 16–26/11 |
