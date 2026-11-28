@@ -37,7 +37,7 @@
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
+| 1 | `run-1@20261128-094905` | gemini-3.1-flash-lite | prompt + 3 công cụ như `codebase/` tại commit sau PR #15 (phòng / giờ học, kiểm ngày giờ + mã phòng) · 28 câu · 1 câu lỗi kỹ thuật (B21, HTTP 503 Gemini quá tải) | __/28 *(đang chấm)* | | |
 | 2 | | | | __/__ | | |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
