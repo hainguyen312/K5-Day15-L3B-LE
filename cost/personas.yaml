@@ -47,6 +47,10 @@ prices:             # USD / 1 triệu token — further-reading/model-prices.md 
     input: 1.50
     output: 7.50
     source: "further-reading/model-prices.md (repo đề) · https://ai.google.dev/gemini-api/docs/pricing · BTC xem 25/11/2026 · tầng Lớn"
+  - model: gpt-5.4-mini
+    input: 0.75
+    output: 4.50
+    source: "further-reading/model-prices.md (repo đề) · BTC xem 25/11/2026 · giá do Hải ghi trong comment PR #17 · model dùng cho lượt 1–2"
 
 usd_to_vnd:         # tuỳ chọn: điền thì bản tóm tắt in thêm tiền Việt
   rate:
