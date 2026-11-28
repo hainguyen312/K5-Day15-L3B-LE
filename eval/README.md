@@ -42,6 +42,8 @@
 
 Hai lượt chạy bằng nhánh `openai` thêm tạm vào `codebase/ai.py` trên máy Huy (chưa commit vì nhóm đang nối Gemini); token lấy từ `usage` của API.
 
+Ngoài hai lượt trên, Hải chạy một lượt bằng `gemini-3.1-flash-lite` trên máy khác (`run-1@20261128-094905`, 28 câu, 1 câu lỗi HTTP 503 do Gemini quá tải) trước khi biết lượt của Huy; lượt này **chưa chấm** và không đưa vào `eval/` vì trùng tên file `run-1` — file gốc giữ ở commit `f4e2cbf` trên nhánh `hai/cp3-run1-web`. Metric `khong_tac_dong_ngoai` của lượt đó: đạt (7/7 `escalate` nháp).
+
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
