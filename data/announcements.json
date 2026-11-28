@@ -156,6 +156,126 @@
       "text": "Lab mẫu M4: nộp file notebook .ipynb và ảnh chụp kết quả chạy, qua Google Form của lớp. Hạn 23:59 Chủ Nhật 13/12.",
       "supersedes": null,
       "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS08",
+      "label": "synthetic",
+      "channel": "lop-l3b",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T18:00",
+      "applies_to": "L3B",
+      "title": "Lịch học sáng Thứ Hai 30/11 — lớp L3B",
+      "text": "Lớp L3B: lab sáng Thứ Hai 30/11 học 08:30 tại phòng C303.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — bản đầu, sau đó bị TS09 thay"
+    },
+    {
+      "id": "TS09",
+      "label": "synthetic",
+      "channel": "lop-l3b",
+      "author_role": "TA",
+      "posted_at": "2026-11-28T07:30",
+      "applies_to": "L3B",
+      "title": "Đổi phòng lab sáng Thứ Hai 30/11 — lớp L3B",
+      "text": "Đính chính: lab L3B sáng Thứ Hai 30/11 chuyển từ phòng C303 sang phòng C204, giờ học 08:30 không đổi.",
+      "supersedes": "TS08",
+      "source_ref": "nhóm tự dựng — đổi phòng sát giờ, thay TS08"
+    },
+    {
+      "id": "TS10",
+      "label": "synthetic",
+      "channel": "thong-bao-chung",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T20:00",
+      "applies_to": "tat_ca",
+      "title": "Sinh hoạt nhóm hackathon tối Thứ Hai 30/11",
+      "text": "Tối Thứ Hai 30/11 lúc 19:00: buổi sinh hoạt nhóm hackathon, phòng E305.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — cố ý trùng giờ với TS11, không thông báo nào thay thông báo nào"
+    },
+    {
+      "id": "TS11",
+      "label": "synthetic",
+      "channel": "thong-bao-chung",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T20:30",
+      "applies_to": "tat_ca",
+      "title": "Gặp mentor tối Thứ Hai 30/11",
+      "text": "Tối Thứ Hai 30/11 lúc 19:00: buổi gặp mentor, phòng C204.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — cố ý trùng giờ với TS10"
+    },
+    {
+      "id": "TS12",
+      "label": "synthetic",
+      "channel": "thread-hoi-dap",
+      "author_role": "TA",
+      "posted_at": "2026-11-19T10:00",
+      "applies_to": "tat_ca",
+      "title": "Trả lời thread: link repo nộp ở đâu",
+      "text": "Trả lời trong thread 'link repo nộp ở đâu': nộp link repo qua LMS, không nộp qua mục submission.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — câu đã được trả lời ở thread khác"
+    },
+    {
+      "id": "TS13",
+      "label": "synthetic",
+      "channel": "thong-bao-chung",
+      "author_role": "TA",
+      "posted_at": "2026-11-18T09:00",
+      "applies_to": "tat_ca",
+      "title": "Lịch Gate mẫu 2",
+      "text": "Gate mẫu 2 diễn ra ngày 29/12.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — bản đầu, sau đó bị TS14 thay"
+    },
+    {
+      "id": "TS14",
+      "label": "synthetic",
+      "channel": "thong-bao-chung",
+      "author_role": "TA",
+      "posted_at": "2026-11-19T16:00",
+      "applies_to": "tat_ca",
+      "title": "Đổi lịch Gate mẫu 2",
+      "text": "Đính chính: Gate mẫu 2 dời từ ngày 29/12 sang ngày 22/12.",
+      "supersedes": "TS13",
+      "source_ref": "nhóm tự dựng — thông báo đổi lịch, thay TS13"
+    },
+    {
+      "id": "TS15",
+      "label": "synthetic",
+      "channel": "lop-l3b",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T17:00",
+      "applies_to": "L3B",
+      "title": "Lịch lab sáng Thứ Ba 01/12 — lớp L3B",
+      "text": "Lớp L3B: lab sáng Thứ Ba 01/12 học 08:30 tại phòng E305.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng"
+    },
+    {
+      "id": "TS16",
+      "label": "synthetic",
+      "channel": "lop-l3a",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T17:10",
+      "applies_to": "L3A",
+      "title": "Lịch lab sáng Thứ Tư 02/12 — lớp L3A",
+      "text": "Lớp L3A: lab sáng Thứ Tư 02/12 học 08:30 tại phòng B101.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — khác lớp với TS17"
+    },
+    {
+      "id": "TS17",
+      "label": "synthetic",
+      "channel": "lop-l3b",
+      "author_role": "TA",
+      "posted_at": "2026-11-27T17:15",
+      "applies_to": "L3B",
+      "title": "Lịch lab sáng Thứ Tư 02/12 — lớp L3B",
+      "text": "Lớp L3B: lab sáng Thứ Tư 02/12 học 09:00 tại phòng B102.",
+      "supersedes": null,
+      "source_ref": "nhóm tự dựng — khác lớp với TS16"
     }
   ]
 }
